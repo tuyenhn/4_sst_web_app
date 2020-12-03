@@ -1,0 +1,26 @@
+{
+  "name": "4_sst_web_app",
+  "version": "0.0.1",
+  "description": "web app development for RMIT's number 4 ",
+  "main": "index.js",
+  "scripts": {
+    "compile-css": "npx postcss css/template.css -o compiled-css/template.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuyenhn/4_sst_web_app.git"
+  },
+  "author": "Tuyen Huynh",
+  "bugs": {
+    "url": "https://github.com/tuyenhn/4_sst_web_app/issues"
+  },
+  "homepage": "https://github.com/tuyenhn/4_sst_web_app#readme",
+  "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "tailwindcss": "^2.0.1"
+  },
+  "devDependencies": {
+    "postcss": "^8.1.13",
+    "postcss-cli": "^8.3.0"
+  }
+}
