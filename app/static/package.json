@@ -2,7 +2,7 @@
   "name": "4_sst_web_app",
   "version": "0.0.1",
   "description": "web app development for RMIT's number 4 ",
-  "main": "index.js",
+  "main": "./js/index.js",
   "scripts": {
     "compile-css": "npx postcss css/template.css -o compiled-css/template.css"
   },
