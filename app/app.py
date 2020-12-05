@@ -1,5 +1,8 @@
 from flask import Flask, render_template
+import os
 
+dirname = os.path.dirname(__file__)
+certpath = os.path.join(dirname, "cert/")
 
 app = Flask(__name__)
 
@@ -24,5 +27,5 @@ def help():
     return render_template("help.html")
 
 
-app.config["SERVER_NAME"] = "4sst.rmit"
-app.run(debug=True, port=80)
+app.config["SERVER_NAME"] = "4sst.rmit:80"
+app.run(debug=True, ssl_context=(certpath + "4sst.rmit.pem", certpath + "4sst.rmit-key.pem"))

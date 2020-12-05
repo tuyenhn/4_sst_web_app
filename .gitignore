@@ -148,3 +148,6 @@ cython_debug/
 # Local History for Visual Studio Code
 .history/
 node_modules
+
+cert/
+cert/*
