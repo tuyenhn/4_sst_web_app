@@ -11,10 +11,21 @@ module.exports = {
       "body-medium": "Helvetica Neue Medium",
       "body-bold": "Helvetica Neue Bold",
     },
+    backgroundColor:theme => ({
+      ...theme('colors'),
+      'bg-primary':'#000054',
+      'bg-secondary':'',
+    })
+    ,extend:{
+      backgroundOpacity:{
+        '80':'0.8',
+      }
+    }
+    
     // boxShadow: {
     //   inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);",
     // },
-    extend: {},
+    
   },
   variants: {
     extend: {
