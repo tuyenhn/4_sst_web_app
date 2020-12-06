@@ -11,12 +11,24 @@ module.exports = {
       "body-medium": "Helvetica Neue Medium",
       "body-bold": "Helvetica Neue Bold",
     },
+    margin:{
+      sm:'8px',
+      md: '16px',
+      lg: '24px',
+      xl: '48px',
+    },
     backgroundColor:theme => ({
       ...theme('colors'),
       'bg-primary':'#000054',
       'bg-secondary':'',
-    })
-    ,extend:{
+    }),
+    textColor:theme => ({
+      ...theme('colors'),
+      'text-primary':'#000054',
+      'text-secondary':'',
+
+    }),
+    extend:{
       backgroundOpacity:{
         '80':'0.8',
       }
@@ -28,8 +40,13 @@ module.exports = {
     
   },
   variants: {
+    display:["group-hover"],
     extend: {
-      backgroundColor: ["active"],
+    backgroundColor: ["active"],
+    textColor: ["active"],
+    margin: ['hover', 'focus'],
+    opacity: ['responsive', 'hover'],
+    
     },
   },
   plugins: [],
