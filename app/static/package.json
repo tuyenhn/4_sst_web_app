@@ -4,8 +4,7 @@
   "description": "web app development for RMIT's number 4 ",
   "main": "./js/index.js",
   "scripts": {
-    "compile-css": "npx postcss css/template.css -o compiled-css/template.css",
-    "install": "npm install && npm ci"
+    "compile-css": "npx postcss css/template.css -o compiled-css/template.css"
   },
   "repository": {
     "type": "git",
