@@ -97,7 +97,6 @@
   @apply bg-green-400;
   background-color: #68d391;
 }
-
-.bg-custom-300 {
-  background-color:rgba(0, 0, 84, 0.8);
+.column-width {
+  column-width: 100px;
 }

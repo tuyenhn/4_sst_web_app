@@ -11,42 +11,41 @@ module.exports = {
       "body-medium": "Helvetica Neue Medium",
       "body-bold": "Helvetica Neue Bold",
     },
-    margin:{
-      sm:'8px',
-      md: '16px',
-      lg: '24px',
-      xl: '48px',
-    },
-    backgroundColor:theme => ({
-      ...theme('colors'),
-      'bg-primary':'#000054',
-      'bg-secondary':'',
+    backgroundColor: (theme) => ({
+      ...theme("colors"),
+      "bg-primary": "#000054",
+      "bg-secondary": "",
     }),
-    textColor:theme => ({
-      ...theme('colors'),
-      'text-primary':'#000054',
-      'text-secondary':'',
-
+    textColor: (theme) => ({
+      ...theme("colors"),
+      "text-primary": "#000054",
+      "text-secondary": "",
     }),
-    extend:{
-      backgroundOpacity:{
-        '80':'0.8',
-      }
-    }
     
+    extend: {
+      backgroundOpacity: {
+        80: "0.8",
+      },
+
+      margin: {
+        sm: "8px",
+        md: "16px",
+        lg: "24px",
+        xl: "48px",
+      },
+    },
+
     // boxShadow: {
     //   inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);",
     // },
-    
   },
   variants: {
-    display:["group-hover"],
+    display: ["group-hover"],
     extend: {
-    backgroundColor: ["active"],
-    textColor: ["active"],
-    margin: ['hover', 'focus'],
-    opacity: ['responsive', 'hover'],
-    
+      backgroundColor: ["active"],
+      textColor: ["active"],
+      margin: ["hover", "focus"],
+      opacity: ["responsive", "hover"],
     },
   },
   plugins: [],
