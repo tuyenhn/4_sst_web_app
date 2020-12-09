@@ -27,5 +27,5 @@ def help():
     return render_template("help.html")
 
 
-app.config["SERVER_NAME"] = "4sst.rmit:80"
+app.config["SERVER_NAME"] = "4sst.rmit:443"
 app.run(debug=True, ssl_context=(certpath + "4sst.rmit.pem", certpath + "4sst.rmit-key.pem"))
