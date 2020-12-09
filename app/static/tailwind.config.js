@@ -1,6 +1,7 @@
+const smelte = require("smelte/rollup-plugin-smelte");
 module.exports = {
   purge: ["./../templates/*.html", "./js/*.js"],
-  darkMode: false, // or 'media' or 'class'
+  // darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       "header-light": "Museo-300",
@@ -21,7 +22,7 @@ module.exports = {
       "text-primary": "#000054",
       "text-secondary": "",
     }),
-    
+
     extend: {
       backgroundOpacity: {
         80: "0.8",
@@ -48,5 +49,9 @@ module.exports = {
       opacity: ["responsive", "hover"],
     },
   },
-  plugins: [],
+  experimental: {
+    darkModeVariant: true,
+  },
+
+  plugins: [require("@tailwindcss/custom-forms")],
 };

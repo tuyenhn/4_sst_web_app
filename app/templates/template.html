@@ -9,7 +9,6 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='compiled-css/template.css') }}"
     />
-
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -143,5 +142,7 @@
     <div class="col-span-11 bg-white p-5 shadow-inner">
       {% block content %} {% endblock %}
     </div>
+    <!--Javascript-->
+    <script src="{{ url_for('static', filename='js/index.js')}}" />
   </body>
 </html>
