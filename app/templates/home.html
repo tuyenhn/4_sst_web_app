@@ -4,14 +4,14 @@
 <!--Carousel-->
 <div class="sliderAx h-1/2">
   <div id="slider-1" class="container mx-auto h-full">
-    <div class="h-full bg-cover bg-center py-24 px-10 object-fill">
+    <div class="h-full bg-cover bg-center">
       <div class="bg-red-500 h-full"></div>
     </div>
     <!-- container -->
   </div>
 
   <div id="slider-2" class="container mx-auto h-full">
-    <div class="h-full bg-cover bg-center py-24 px-10 object-fill">
+    <div class="h-full bg-cover bg-center">
       <div class="bg-blue-500 h-full"></div>
     </div>
     <!-- container -->
@@ -67,19 +67,16 @@
             />
           </label>
 
-          <div class="block">
-            <div>
-              <label class="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  class="transition-all rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-                <span class="ml-2">Remember me</span>
-              </label>
-            </div>
+          <div class="flex justify-evenly">
+            <label class="block">
+              <input
+                type="checkbox"
+                class="transition-all rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              />
+              <span>Remember me</span>
+            </label>
+            <input type="submit" class="rounded-lg w-1/2" />
           </div>
-
-          <input type="submit" />
         </div>
       </form>
     </div>
