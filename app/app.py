@@ -1,8 +1,8 @@
 from flask import Flask, render_template
-import os
+from os import path
 
-dirname = os.path.dirname(__file__)
-certpath = os.path.join(dirname, "cert/")
+dirname = path.dirname(__file__)
+certpath = path.join(dirname, "cert/")
 
 app = Flask(__name__)
 
