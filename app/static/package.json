@@ -17,9 +17,14 @@
   "homepage": "https://github.com/tuyenhn/4_sst_web_app#readme",
   "dependencies": {
     "autoprefixer": "^10.0.4",
+    "jquery": "^3.5.1",
+    "pretty-checkbox": "^3.0.3",
+    "smelte": "^1.0.18",
     "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
+    "@fouita/slider": "0.0.3",
+    "@tailwindcss/custom-forms": "^0.2.1",
     "postcss": "^8.1.14",
     "postcss-cli": "^8.3.0"
   }
