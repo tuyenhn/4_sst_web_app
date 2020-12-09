@@ -33,9 +33,16 @@
     />
 
     <!--Javascript-->
-    <script src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-
+    <script
+      async
+      defer
+      src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}"
+    ></script>
+    <script
+      async
+      defer
+      src="{{ url_for('static', filename='js/index.js') }}"
+    ></script>
     {% endblock %}
   </head>
 
