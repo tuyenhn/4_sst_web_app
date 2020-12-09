@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4 SST</title>
 
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='compiled-css/template.css') }}"
     />
-
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -31,11 +31,12 @@
       rel="manifest"
       href="{{ url_for('static', filename='images/favicon/site.webmanifest') }}"
     />
+    {% endblock %}
   </head>
 
   <body class="bg-bg-primary bg-opacity-80 grid grid-cols-12 h-screen py-5">
-    <div class="col-span-1">
-      <div class="space-y-2 mt-5">
+    <div class="col-span-1 pt-5 h-full">
+      <div class="space-y-2">
         <div class="font-header-medium text-center text-white text-4xl">
           4 SST
         </div>
@@ -140,7 +141,7 @@
       </div>
     </div>
 
-    <div class="col-span-11 bg-white p-5 shadow-inner">
+    <div class="col-span-11 bg-white p-5 shadow-inner h-full">
       {% block content %} {% endblock %}
     </div>
   </body>
