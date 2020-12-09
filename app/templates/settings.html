@@ -1,68 +1,70 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  {% extends "template.html" %}
-  <body>
-    {% block content %}
-    <!--Dark mode-->
-    <div class="p-10 grid grid-cols-2 grid-rows-2">
-      <div class="flex items-center justify-end flex-wrap content-between">
-        <label
-          for="toggle"
-          class="flex justify-start text-md text-text-primary static font-header-medium px-4 items-center"
-          >Dark Mode</label
-        >
-      </div>
-      <div
-        class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in"
-      >
-        <input
-          type="checkbox"
-          name="toggle"
-          id="toggle"
-          class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-        />
-        <label
-          for="toggle"
-          class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
-        ></label>
-      </div>
-      <!-- Language -->
-      <div class="flex items-center justify-end flex-wrap content-between">
-        <label
-          for="toggle"
-          class="flex justify-start text-text-primary static font-header-medium text-md px-4 items-center"
-        >
-          Language
-        </label>
-      </div>
+{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
+%} {{ super() }} {% endblock %} {% block content %}
 
-      <div class="group inline-block relative">
-        <button
-          class="bg-gray-300 text-gray-700 py-2 px-4 rounded inline-flex items-center font font-header-medium"
-        >
-          <span class="mr-1">English</span>
-          <svg
-            class="fill-current h-4 w-4"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-            />
-          </svg>
-        </button>
-        <ul class="absolute hidden text-gray-700 pt-1 group-hover:block">
-          <li class="">
-            <a
-              class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block rounded whitespace-no-wrap"
-              href="#"
-              >Vietnamese</a
-            >
-          </li>
-        </ul>
-      </div>
+<div class="pt-20 grid grid-cols-2 grid-rows-2 gap-6">
+  <!--Dark mode-->
+  <div class="flex items-center justify-end">
+    <label
+      for="toggle"
+      class="flex justify-start text-md text-text-primary static font-header-medium items-center"
+    >
+      Dark Mode
+    </label>
+  </div>
+  <div class="flex items-center justify-start">
+    <div class="switch colour">
+      <input id="check3" class="switch-checkbox hidden" type="checkbox" />
+      <label
+        for="check3"
+        class="switch-label block w-12 h-6 rounded-full transition-all duration-150 ease-out"
+      ></label>
     </div>
+  </div>
 
-    {% endblock %}
-  </body>
-</html>
+  <!-- Language -->
+  <div class="flex items-center justify-end">
+    <label
+      for="toggle"
+      class="flex justify-start text-text-primary static font-header-medium text-md items-center"
+    >
+      Language
+    </label>
+  </div>
+  <div class="relative inline-flex">
+    <select
+      class="transition-all border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+    >
+      <option>English</option>
+      <option>Vietnamese</option>
+    </select>
+  </div>
+  {#
+  <div class="group inline-block relative">
+    <button
+      class="bg-gray-300 text-gray-700 py-2 px-4 rounded inline-flex items-center font font-header-medium"
+    >
+      <span class="mr-1">English</span>
+      <svg
+        class="fill-current h-4 w-4"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+        />
+      </svg>
+    </button>
+    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block">
+      <li class="">
+        <a
+          class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block rounded whitespace-no-wrap"
+          href="#"
+          >Vietnamese</a
+        >
+      </li>
+    </ul>
+  </div>
+  #}
+</div>
+
+{% endblock %}
