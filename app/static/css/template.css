@@ -46,6 +46,7 @@
   font-family: "Helvetica Neue Roman";
   src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Roman.ttf");
 }
+
 /* Carousel */
 .carousel-open:checked + .carousel-item {
   position: static;

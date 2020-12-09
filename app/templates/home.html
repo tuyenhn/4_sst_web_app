@@ -1,113 +1,40 @@
 {% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
 %} {{ super() }} {% endblock %} {% block content %}
+
 <!--Carousel-->
-<div class="carousel h-1/2 relative shadow-2xl">
-  <div class="carousel-inner absolute overflow-hidden w-full">
-    <!--Slide 1-->
-    <input
-      class="carousel-open"
-      type="radio"
-      id="carousel-1"
-      name="carousel"
-      aria-hidden="true"
-      hidden=""
-      checked="checked"
-    />
-    <div class="carousel-item absolute opacity-0" style="height: 46vh">
-      <div
-        class="block h-full w-full bg-indigo-500 text-white text-5xl text-center"
-      ></div>
+<div class="sliderAx h-1/2">
+  <div id="slider-1" class="container mx-auto h-full">
+    <div class="h-full bg-cover bg-center py-24 px-10 object-fill">
+      <div class="bg-red-500 h-full"></div>
     </div>
-    <label
-      for="carousel-3"
-      class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-      >‹</label
-    >
-    <label
-      for="carousel-2"
-      class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-      >›</label
-    >
+    <!-- container -->
+  </div>
 
-    <!--Slide 2-->
-    <input
-      class="carousel-open"
-      type="radio"
-      id="carousel-2"
-      name="carousel"
-      aria-hidden="true"
-      hidden=""
-    />
-    <div class="carousel-item absolute opacity-0" style="height: 46vh">
-      <div
-        class="block h-full w-full bg-green-500 text-white text-5xl text-center"
-      ></div>
+  <div id="slider-2" class="container mx-auto h-full">
+    <div class="h-full bg-cover bg-center py-24 px-10 object-fill">
+      <div class="bg-blue-500 h-full"></div>
     </div>
-    <label
-      for="carousel-1"
-      class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-      >‹</label
-    >
-    <label
-      for="carousel-3"
-      class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-      >›</label
-    >
-    <!--Slide 3-->
-    <input
-      class="carousel-open"
-      type="radio"
-      id="carousel-3"
-      name="carousel"
-      aria-hidden="true"
-      hidden=""
-    />
-    <div class="carousel-item absolute opacity-0" style="height: 46vh">
-      <div
-        class="block h-full w-full bg-green-500 text-white text-5xl text-center"
-      ></div>
-    </div>
-    <label
-      for="carousel-2"
-      class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-      >‹</label
-    >
-    <label
-      for="carousel-1"
-      class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-      >›</label
-    >
-
-    <!-- Add additional indicators for each slide-->
-    <ol class="carousel-indicators">
-      <li class="inline-block mr-3">
-        <label
-          for="carousel-1"
-          class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-          >•</label
-        >
-      </li>
-      <li class="inline-block mr-3">
-        <label
-          for="carousel-2"
-          class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-          >•</label
-        >
-      </li>
-      <li class="inline-block mr-3">
-        <label
-          for="carousel-3"
-          class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"
-          >•</label
-        >
-      </li>
-    </ol>
+    <!-- container -->
   </div>
 </div>
+
+<div class="flex justify-between w-12 mx-auto pb-2">
+  <button
+    id="sButton1"
+    onclick="sliderButton1()"
+    class="bg-purple-400 rounded-full w-4 pb-2"
+  ></button>
+  <button
+    id="sButton2"
+    onclick="sliderButton2() "
+    class="bg-purple-400 rounded-full w-4 p-2"
+  ></button>
+</div>
+
 <!--Description-->
-<div class="h-1/2 w-1/2 float-left px-8 pt-6 pb-8 mb-4">
-  <p class="font-header-medium align-center">
-    The SST board is a RMIT’s School of Science & Technology’s homegrown
+<div class="h-1/2 w-1/2 float-left p-10">
+  <p class="font-header-medium align-center text-justify">
+    The 4 SST LED board is a RMIT’s School of Science & Technology’s homegrown
     project, designed and programmed by a group of 4 IT students. The idea stems
     from wanting SST to have a unique and special feeling, like a small family.
     The board is made up of laser-cut mica boards, more than 3000 programmable
@@ -120,106 +47,56 @@
     active and out-spoken with their ideas as we had before.
   </p>
 </div>
+
 <!--Login-->
-<div
-  class="rounded-lg px-8 pt-6 pb-8 mb-4 flex flex-col h-1/2 w-1/2 float-right shadow-lg"
->
-  <h2 class="text-2xl font-bold text-center font-header-bold">Login</h2>
-  <div class="mb-4">
-    <label
-      class="block text-grey-darker text-sm font-bold mb-2 font-header-medium"
-      for="username"
-    >
-      Username
-    </label>
-    <input
-      class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-      id="username"
-      type="text"
-      placeholder="Username"
-    />
-  </div>
-  <div class="mb-6">
-    <label
-      class="block text-grey-darker text-sm font-bold mb-2 font-header-medium"
-      for="password"
-    >
-      Password
-    </label>
-    <input
-      class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-      id="password"
-      type="password"
-      placeholder="******************"
-    />
-    <p class="text-red text-xs italic font-header-medium">
-      Please choose a password.
-    </p>
-    <div class="flex items-center justify-between">
-      <div class="flex items-center">
-        <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-          id="username"
-          type="text"
-          placeholder="Username"
-          required
-        />
-        <label
-          class="block text-grey-darker text-sm font-bold mb-2 font-header-medium required"
-          for="password"
-        >
-          Password
-        </label>
-        <input
-          class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-          id="password"
-          type="password"
-          placeholder="******************"
-          required
-        />
-        <p class="text-red text-xs italic font-header-medium">
-          Please choose a password.
-        </p>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
+<div class="h-1/2 w-1/2 float-right p-10">
+  <div class="rounded-lg flex flex-col shadow-lg p-5 border-2 border-gray-300">
+    <div>
+      <h2 class="text-2xl font-bold text-center font-header-bold">Login</h2>
+    </div>
+
+    <div>
+      <form>
+        <div class="grid grid-cols-1 gap-1">
+          <label class="block" for="username">
+            <span class="text-grey-darker text-sm font-bold font-header-medium">
+              Username
+            </span>
             <input
-              id="remember_me"
-              name="remember_me"
-              type="checkbox"
-              class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded shadow-2xl"
+              class="transition-all mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              id="username"
+              type="text"
             />
-            <label
-              for="remember_me"
-              class="ml-2 mx-sm block text-sm text-gray-900 font-header-medium"
-            >
-              Remember me
-            </label>
+          </label>
+
+          <label class="block" for="password">
+            <span class="text-grey-darker text-sm font-bold font-header-medium">
+              Password
+            </span>
+            <input
+              class="transition-all mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              id="password"
+              type="password"
+            />
+          </label>
+
+          <div class="block">
+            <div>
+              <label class="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  class="transition-all rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+                <span class="ml-2">Remember me</span>
+              </label>
+            </div>
           </div>
+
+          <input type="submit" />
         </div>
-        <div class="flex items-center justify-between">
-          <button
-            type="submit"
-            class="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 font-header-medium"
-          >
-            Sign in
-          </button>
-        </div>
-      </div>
-      <div class="flex items-center justify-between">
-        <button
-          type="submit"
-          class="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 font-header-medium"
-        >
-          Sign in
-        </button>
-        <a
-          class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker font-header-medium"
-          href="#"
-        >
-          Forgot Password?
-        </a>
-      </div>
+      </form>
     </div>
   </div>
-  {% endblock %}
 </div>
+
+{% endblock %}

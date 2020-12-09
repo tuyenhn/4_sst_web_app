@@ -35,10 +35,6 @@ module.exports = {
         xl: "48px",
       },
     },
-
-    // boxShadow: {
-    //   inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);",
-    // },
   },
   variants: {
     display: ["group-hover"],
@@ -53,5 +49,5 @@ module.exports = {
     darkModeVariant: true,
   },
 
-  plugins: [require("@tailwindcss/custom-forms")],
+  plugins: [require("@tailwindcss/forms")],
 };
