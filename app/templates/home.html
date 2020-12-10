@@ -21,7 +21,7 @@
 <!--Description-->
 <div class="h-1/2 w-1/2 float-left flex flex-wrap content-center px-5">
     <div class="w-full">
-      <p class="font-header-medium align-center text-justify">
+      <p class="font-body-roman align-center text-justify text-xl">
         The 4 SST LED board is a RMIT’s School of Science & Technology’s homegrown
         project, designed and programmed by a group of 4 IT students. The idea stems
         from wanting SST to have a unique and special feeling, like a small family.
@@ -47,7 +47,7 @@
 
         <div>
           <form>
-            <div class="grid grid-cols-1 gap-1">
+            <div class="grid grid-cols-1 gap-2">
               <label class="block" for="username">
                 <span class="text-grey-darker text-sm font-bold font-header-medium">
                   Username
@@ -59,26 +59,38 @@
                 />
               </label>
 
-              <label class="block" for="password">
-                <span class="text-grey-darker text-sm font-bold font-header-medium">
-                  Password
-                </span>
-                <input
-                  class="transition-all mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  id="password"
-                  type="password"
-                />
-              </label>
+              <div>
+                <label class="block text-grey-darker text-sm font-bold font-header-medium" for="password">Password</label>
+                <div class="relative w-full">
+                  <div class="absolute inset-y-0 right-0 flex items-center px-2">
+                    <input class="hidden" id="toggle" type="checkbox" />
+                    <label class="bg-gray-300 hover:bg-gray-400 rounded px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer" for="toggle" id="eyeBtn">
+                      <i class="fas fa-eye-slash" id="eye"></i>
+                    </label>
+                  </div>
+                  <input
+                    class="appearance-none border-2 rounded-md w-full leading-tight border-gray-300 transition-all focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    id="password"
+                    type="password"
+                  />
+                </div>
+              </div>
 
-              <div class="flex justify-evenly">
-                <label class="block">
+              <div>
+                <label class="float-left block">
                   <input
                     type="checkbox"
                     class="transition-all rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   />
-                  <span>Remember me</span>
+                  <span class="font-body-roman">Remember me</span>
                 </label>
-                <input type="submit" class="rounded-lg w-1/2" />
+                <div class="float-right">
+                  <p id="capsWarning" class="font-body-roman">WARNING! Caps lock is ON.</p>
+                </div>
+              </div>
+
+              <div>
+                <input type="submit" class="rounded-lg w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white h-8" />
               </div>
             </div>
           </form>
