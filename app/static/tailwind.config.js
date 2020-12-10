@@ -1,4 +1,5 @@
 const smelte = require("smelte/rollup-plugin-smelte");
+
 module.exports = {
   purge: ["./../templates/*.html", "./js/*.js"],
   // darkMode: false, // or 'media' or 'class'
