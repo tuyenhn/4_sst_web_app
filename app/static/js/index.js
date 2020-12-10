@@ -25,6 +25,10 @@ let loopSlider = () => {
   }, 3000);
 };
 
+$(document).ready(() => {
+  $(".no-fouc").removeClass('no-fouc');
+})
+
 $(window).ready(() => {
   $("#slider-2").hide();
 

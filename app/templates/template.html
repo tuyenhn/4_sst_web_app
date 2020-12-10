@@ -161,5 +161,15 @@
     <div class="col-span-11 bg-white p-5 shadow-inner h-full">
       {% block content %} {% endblock %}
     </div>
+
+    <style type="text/css">
+        .no-fouc {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        document.documentElement.className = 'no-fouc';
+    </script>
+
   </body>
 </html>
