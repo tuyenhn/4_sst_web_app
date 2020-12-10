@@ -24,6 +24,7 @@
     "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "@fouita/slider": "0.0.3",
     "jquery": "^3.5.1",
     "postcss": "^8.1.14",
