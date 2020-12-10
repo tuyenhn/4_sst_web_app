@@ -62,5 +62,8 @@ $(document).ready(() => {
 $(window).ready(() => {
   $("#slider-2").hide();
 
+  // SVG height adjustment
+  $("#svg4").height($(window).height() - 80);
+
   loopSlider();
 });
