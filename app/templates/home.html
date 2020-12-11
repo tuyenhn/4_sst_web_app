@@ -1,102 +1,122 @@
-{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
-%} {{ super() }} {% endblock %} {% block content %}
+{% extends "template.html" %}
+{% block title %}4 SST{% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block content %}
 
-<!--Carousel-->
-<div class="sliderAx h-1/2">
-  <div id="slider-1" class="container mx-auto h-full">
-    <div class="h-full bg-cover bg-center">
-      <div class="bg-red-500 h-full"></div>
-    </div>
-    <!-- container -->
-  </div>
+	<!--Carousel-->
+	<div class="sliderAx h-1/2">
+		<div id="slider-1" class="container mx-auto h-full">
+			<div class="h-full bg-cover bg-center">
+				<div class="bg-red-500 h-full"></div>
+			</div>
+			<!-- container -->
+		</div>
 
-  <div id="slider-2" class="container mx-auto h-full">
-    <div class="h-full bg-cover bg-center">
-      <div class="bg-blue-500 h-full"></div>
-    </div>
-    <!-- container -->
-  </div>
-</div>
+		<div id="slider-2" class="container mx-auto h-full">
+			<div class="h-full bg-cover bg-center">
+				<div class="bg-blue-500 h-full"></div>
+			</div>
+			<!-- container -->
+		</div>
+	</div>
 
-<!--Description-->
-<div class="h-1/2 w-1/2 float-left flex flex-wrap content-center px-5">
-    <div class="w-full">
-      <p class="font-body-roman align-center text-justify text-xl">
-        The 4 SST LED board is a RMIT’s School of Science & Technology’s homegrown
-        project, designed and programmed by a group of 4 IT students. The idea stems
-        from wanting SST to have a unique and special feeling, like a small family.
-        The board is made up of laser-cut mica boards, more than 3000 programmable
-        LEDs, precise soldering, a Teensy development board and, to cap it off, a
-        strong power supply to drive everything and make it portable. With careful
-        and manual LED mapping, beautiful animations and patterns can be displayed
-        on the board. Not just ourselves, this project is the culmination of work
-        from both the teaching staff and the technicians from the school and other
-        students as well. We hope with this project, more students can be more
-        active and out-spoken with their ideas as we had before.
-      </p>
-    </div>
-</div>
+	<!--Description-->
+	<div class="h-1/2 w-1/2 float-left flex flex-wrap content-center px-5">
+		<div class="w-full">
+			<p class="font-body-roman align-center text-justify text-xl md:text-lg sm:text-base">
+				The 4 SST LED board is a RMIT’s School of Science & Technology’s homegrown
+				project, designed and programmed by a group of 4 IT students. The idea
+				stems from wanting SST to have a unique and special feeling, like a small
+				family. The board is made up of laser-cut mica boards, more than 3000
+				programmable LEDs, precise soldering, a Teensy development board and, to
+				cap it off, a strong power supply to drive everything and make it
+				portable. With careful and manual LED mapping, beautiful animations and
+				patterns can be displayed on the board. Not just ourselves, this project
+				is the culmination of work from both the teaching staff and the
+				technicians from the school and other students as well. We hope with this
+				project, more students can be more active and out-spoken with their ideas
+				as we had before.
+			</p>
+		</div>
+	</div>
 
-<!--Login-->
-<div class="h-1/2 w-1/2 float-right flex flex-wrap content-center px-5">
-    <div class="w-full">
-      <div class="rounded-lg flex flex-col shadow-lg p-5 border-2 border-gray-300">
-        <div>
-          <h2 class="text-2xl font-bold text-center font-header-bold">Login</h2>
-        </div>
+	<!--Login-->
+	<div class="h-1/2 w-1/2 float-right flex flex-wrap content-center px-5">
+		<div class="w-full">
+			<div
+					class="rounded-lg flex flex-col shadow-lg p-5 border-2 border-gray-300"
+			>
+				<div>
+					<h2 class="text-2xl font-bold text-center font-header-bold">Login</h2>
+				</div>
 
-        <div>
-          <form>
-            <div class="grid grid-cols-1 gap-2">
-              <label class="block" for="username">
-                <span class="text-grey-darker text-sm font-bold font-header-medium">
-                  Username
-                </span>
-                <input
-                  class="transition-all mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  id="username"
-                  type="text"
-                />
-              </label>
+				<div>
+					<form>
+						<div class="grid grid-cols-1 gap-2">
+							<label class="block" for="username">
+              <span
+									class="text-grey-darker text-sm font-bold font-header-medium"
+							>
+                Username
+              </span>
+								<input
+										class="transition-all mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+										id="username"
+										type="text"
+								/>
+							</label>
 
-              <div>
-                <label class="block text-grey-darker text-sm font-bold font-header-medium" for="password">Password</label>
-                <div class="relative w-full">
-                  <div class="absolute inset-y-0 right-0 flex items-center px-2">
-                    <input class="hidden" id="toggle" type="checkbox" />
-                    <label class="bg-gray-300 hover:bg-gray-400 rounded px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer" for="toggle" id="eyeBtn">
-                      <i class="fas fa-eye-slash" id="eye"></i>
-                    </label>
-                  </div>
-                  <input
-                    class="appearance-none border-2 rounded-md w-full leading-tight border-gray-300 transition-all focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    id="password"
-                    type="password"
-                  />
-                </div>
-              </div>
+							<div>
+								<label
+										class="block text-grey-darker text-sm font-bold font-header-medium"
+										for="password"
+								>Password</label
+								>
+								<div class="relative w-full">
+									<div class="absolute inset-y-0 right-0 flex items-center px-2">
+										<input class="hidden" id="toggle" type="checkbox" />
+										<label
+												class="bg-gray-300 hover:bg-gray-400 rounded px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer"
+												for="toggle"
+												id="eyeBtn"
+										>
+											<i class="fas fa-eye-slash" id="eye"></i>
+										</label>
+									</div>
+									<input
+											class="appearance-none border-2 rounded-md w-full leading-tight border-gray-300 transition-all focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+											id="password"
+											type="password"
+									/>
+								</div>
+							</div>
 
-              <div>
-                <label class="float-left block">
-                  <input
-                    type="checkbox"
-                    class="transition-all rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  />
-                  <span class="font-body-roman">Remember me</span>
-                </label>
-                <div class="float-right">
-                  <p id="capsWarning" class="font-body-roman">WARNING! Caps lock is ON.</p>
-                </div>
-              </div>
+							<div>
+								<label class="float-left block">
+									<input
+											type="checkbox"
+											class="transition-all rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+									/>
+									<span class="font-body-roman">Remember me</span>
+								</label>
+								<div class="float-right">
+									<p id="capsWarning" class="font-body-roman">
+										WARNING! Caps lock is ON.
+									</p>
+								</div>
+							</div>
 
-              <div>
-                <input type="submit" class="rounded-lg w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white h-8" />
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-</div>
+							<div>
+								<input
+										type="submit"
+										class="rounded-lg w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white h-8"
+								/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

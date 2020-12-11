@@ -1,78 +1,80 @@
-{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
-%} {{ super() }} {% endblock %} {% block content %}
+{% extends "template.html" %}
+{% block title %}4 SST{% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block content %}
 
-<div class="w-1/2 float-left">
-  <svg viewBox="0 0 106 130" id="svg4">
-    <polygon
-      points="48,0 88,0 88,73.5 106,73.5 106,101.5 88,101.5 88,130 52,130 52,101.5 0,101.5 0,73.5"
-      stroke-linecap="round"
-      stroke-width="1"
-      fill="white"
-      stroke="black"
-    ></polygon>
-  </svg>
-</div>
+	<div class="w-1/2 float-left">
+		<svg viewBox="0 0 106 130" id="svg4">
+			<polygon
+					points="48,0 88,0 88,73.5 106,73.5 106,101.5 88,101.5 88,130 52,130 52,101.5 0,101.5 0,73.5"
+					stroke-linecap="round"
+					stroke-width="1"
+					fill="white"
+					stroke="black"
+			></polygon>
+		</svg>
+	</div>
 
-<div class="w-1/2 float-right grid grid-rows-auto grid-cols-2 gap-6">
-  <!--Animation -->
-  <div class="flex flex-wrap justify-end content-center">
-    <p class="font-header-medium">Animation</p>
-  </div>
-  <div class="relative inline-flex">
-    <label>
-      <select
-        class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
-      >
-        <option>RMIT</option>
-        <option>Spiral</option>
-        <option>Wave</option>
-        <option>Mandala</option>
-        <option>Snake</option>
-        <option>Plasma</option>
-        <option>Fireplace</option>
-        <option>Rainbow</option>
-      </select>
-    </label>
-  </div>
+	<div class="w-1/2 float-right grid grid-rows-auto grid-cols-2 gap-6">
+		<!--Animation -->
+		<div class="flex flex-wrap justify-end content-center">
+			<p class="font-header-medium">Animation</p>
+		</div>
+		<div class="relative inline-flex">
+			<label>
+				<select
+						class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+				>
+					<option>RMIT</option>
+					<option>Spiral</option>
+					<option>Wave</option>
+					<option>Mandala</option>
+					<option>Snake</option>
+					<option>Plasma</option>
+					<option>Fireplace</option>
+					<option>Rainbow</option>
+				</select>
+			</label>
+		</div>
 
-  <!--Led-->
-  <div class="flex flex-wrap justify-end content-center">
-    <p class="font-header-medium">LED Power</p>
-  </div>
-  <div>
-    <div class="switch colour">
-      <input id="check3" class="switch-checkbox hidden" type="checkbox" />
-      <label
-        for="check3"
-        class="switch-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
-      ></label>
-    </div>
-  </div>
+		<!--Led-->
+		<div class="flex flex-wrap justify-end content-center">
+			<p class="font-header-medium">LED Power</p>
+		</div>
+		<div>
+			<div class="switch colour">
+				<input id="check3" class="switch-checkbox hidden" type="checkbox" />
+				<label
+						for="check3"
+						class="switch-label block w-12 h-6 rounded-full transition-color duration-150 ease-out"
+				></label>
+			</div>
+		</div>
 
-  <!--Brightness Range Slider-->
-  <div class="flex flex-wrap justify-end content-center">
-    <label class="font-header-medium" for="brRange">LED Brightness:</label>
-  </div>
-  <div>
-    <input
-      type="range"
-      min="1"
-      max="100"
-      value="50"
-      class="appearance-none w-auto h-auto outline-none opacity-70 hover:opacity-100 transition-all bg-blue-200 rounded-lg"
-      id="brRange"
-    />
-    <span id="brLabel" class="ml-3"></span>
-  </div>
+		<!--Brightness Range Slider-->
+		<div class="flex flex-wrap justify-end content-center">
+			<label class="font-header-medium" for="brRange">LED Brightness</label>
+		</div>
+		<div>
+			<input
+					type="range"
+					min="1"
+					max="100"
+					value="50"
+					class="appearance-none w-auto h-auto outline-none opacity-70 hover:opacity-100 transition-all bg-blue-200 rounded-lg"
+					id="brRange"
+			/>
+			<span id="brLabel" class="ml-3"></span>
+		</div>
 
-  <!--Save button-->
-  <div class="col-span-2">
-    <button
-      class="border rounded shadow-lg w-full px-2 py-1 bg-purple-600 hover:bg-purple-700 text-white"
-    >
-      Save
-    </button>
-  </div>
-</div>
+		<!--Save button-->
+		<div class="col-span-2">
+			<button
+					class="border rounded shadow-lg w-full px-2 py-1 bg-purple-600 hover:bg-purple-700 text-white"
+			>
+				Save
+			</button>
+		</div>
+	</div>
 
 {% endblock %}
