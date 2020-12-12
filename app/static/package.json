@@ -20,7 +20,6 @@
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.0.4",
     "pretty-checkbox": "^3.0.3",
-    "smelte": "^1.0.18",
     "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
@@ -29,6 +28,8 @@
     "jquery": "^3.5.1",
     "postcss": "^8.1.14",
     "postcss-cli": "^8.3.0",
+    "prettier": "2.2.1",
+    "prettier-plugin-tailwind": "^2.2.8",
     "uncss": "^0.17.3"
   }
 }
