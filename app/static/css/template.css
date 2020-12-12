@@ -6,24 +6,24 @@
   headlines and single line statements per RMIT's brand guidelines
 */
 @font-face {
-  font-family: "Museo-500";
-  src: url("../fonts/Museo-500/font.woff2") format("woff2"),
+    font-family: "Museo-500";
+    src: url("../fonts/Museo-500/font.woff2") format("woff2"),
     url("../fonts/Museo-500/font.woff") format("woff");
-  font-display: swap;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Museo-300";
-  src: url("../fonts/Museo-300/font.woff2") format("woff2"),
+    font-family: "Museo-300";
+    src: url("../fonts/Museo-300/font.woff2") format("woff2"),
     url("../fonts/Museo-300/font.woff") format("woff");
-  font-display: swap;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Museo-700";
-  src: url("../fonts/Museo-700/font.woff2") format("woff2"),
+    font-family: "Museo-700";
+    src: url("../fonts/Museo-700/font.woff2") format("woff2"),
     url("../fonts/Museo-700/font.woff") format("woff");
-  font-display: swap;
+    font-display: swap;
 }
 
 /* 
@@ -31,72 +31,72 @@
   also appropriate for subheads, charts and diagrams per RMIT's brand guidelines
 */
 @font-face {
-  font-family: "Helvetica Neue Light";
-  src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Light.ttf");
-  font-display: swap;
+    font-family: "Helvetica Neue Light";
+    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Light.ttf");
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Helvetica Neue Bold";
-  src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Bold.ttf");
-  font-display: swap;
+    font-family: "Helvetica Neue Bold";
+    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Bold.ttf");
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Helvetica Neue Medium";
-  src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Medium.ttf");
-  font-display: swap;
+    font-family: "Helvetica Neue Medium";
+    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Medium.ttf");
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Helvetica Neue Roman";
-  src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Roman.ttf");
-  font-display: swap;
+    font-family: "Helvetica Neue Roman";
+    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Roman.ttf");
+    font-display: swap;
 }
 
 /* on/off toggle*/
 .switch-label {
-  position: relative;
+    position: relative;
 }
 
 .switch-label:before {
-  position: absolute;
-  top: 0.125rem;
-  left: 0.125rem;
-  display: block;
-  content: "";
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 9999%;
-  background-color: whitesmoke;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 40%;
-  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23a0aec0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>');
-  transition: transform 0.15s cubic-bezier(0, 0, 0.2, 1);
-  transform: translateX(0);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    position: absolute;
+    top: 0.125rem;
+    left: 0.125rem;
+    display: block;
+    content: "";
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999%;
+    background-color: whitesmoke;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23a0aec0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>');
+    transition: transform 0.15s cubic-bezier(0, 0, 0.2, 1);
+    transform: translateX(0);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .switch-checkbox:checked + .switch-label:before {
-  transform: translateX(1.5rem);
-  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23a0aec0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+    transform: translateX(1.5rem);
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23a0aec0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>');
 }
 
 .switch.switch-label:before {
-  top: -0.15rem;
-  left: 0;
+    top: -0.15rem;
+    left: 0;
 }
 
 .switch.switch-checkbox:checked + .switch-label:before {
-  transform: translateX(1.75rem);
+    transform: translateX(1.75rem);
 }
 
 .switch.colour .switch-label {
-  background: #feb2b2;
+    background: #feb2b2;
 }
 
 .switch.colour .switch-checkbox:checked + .switch-label {
-  background-color: #9ae6b4;
+    background-color: #9ae6b4;
 }

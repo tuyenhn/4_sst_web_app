@@ -1,5 +1,3 @@
-const smelte = require("smelte/rollup-plugin-smelte");
-
 module.exports = {
   purge: ["./../templates/*.html", "./js/*.js"],
   // darkMode: false, // or 'media' or 'class'
@@ -16,24 +14,11 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme("colors"),
       "bg-primary": "#000054",
-      "bg-secondary": "",
-    }),
-    textColor: (theme) => ({
-      ...theme("colors"),
-      "text-primary": "#000054",
-      "text-secondary": "",
     }),
 
     extend: {
       backgroundOpacity: {
         80: "0.8",
-      },
-
-      margin: {
-        sm: "8px",
-        md: "16px",
-        lg: "24px",
-        xl: "48px",
       },
     },
   },
