@@ -78,6 +78,7 @@ let faqCollapse = () => {
   $(".content").hide();
   $(".show_hide").on("click", (e) => {
     $(e.currentTarget)
+      .children("div")
       .children("i")
       .toggleClass("fa-chevron-down fa-chevron-up");
     $(e.currentTarget).children(".content").slideToggle(200);
