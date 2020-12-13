@@ -73,41 +73,24 @@ let mobileNav = () => {
   }
 };
 
-// show/hide content
-$(document).ready(function () {
-  $(".targetDiv").hide();
-});
-var clickCount;
-$(function () {
-  clickCount = 0;
-  $(".showSingle").click(function (e) {
-    clickCount = clickCount == 2 ? 0 : clickCount;
-    if (clickCount == 0) {
-      $(".targetDiv").hide(".cnt");
-      $("#content-" + $(this).attr("target")).slideToggle();
-    } else if (clickCount == 1) {
-      $("#content-" + $(this).attr("target")).hide(1000);
-    }
-    clickCount++;
+// FAQ collapse
+let faqCollapse = () => {
+  $(".content").hide();
+  $(".show_hide").on("click", (e) => {
+    $(e.currentTarget)
+      .children("i")
+      .toggleClass("fa-chevron-down fa-chevron-up");
+    $(e.currentTarget).children(".content").slideToggle(200);
+    $(".content:visible")
+      .not($(e.currentTarget).children(".content"))
+      .slideToggle(200);
   });
-});
-
-$(".change-active").click(function (e) {
-  // Select all list items
-  clickCount = 0;
-  let listItems = $(".change-active");
-
-  // Remove 'active' tag for all list items
-  for (let i = 0; i < listItems.length; i++) {
-    listItems[i].classList.remove("active");
-  }
-  // Add 'active' tag for currently selected item
-  this.classList.add("active");
-});
+};
 
 // prevent FUOC
 $(document).ready(() => {
   $(".no-fouc").removeClass("no-fouc");
+  faqCollapse();
 });
 
 $(window).ready(() => {

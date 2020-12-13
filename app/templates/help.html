@@ -1,222 +1,98 @@
-{% extends "template.html" %}
-{% block title %}4 SST{% endblock %}
-{% block head %} {{ super() }} {% endblock %}
-{% block content %}
+{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
+%} {{ super() }} {% endblock %} {% block content %}
 
-	<div class="bg-gray-100 pt-10">
-		<div class="mx-auto max-w-6xl">
-			<div class="p-2 bg-gray-100 rounded">
-				<div class="flex flex-col md:flex-row">
-					<!--Left side-->
-					<div class="md:w-1/3 p-4 text-sm">
-						<div class="text-3xl">
-							Frequently asked <span class="font-medium">Questions</span>
-						</div>
-						<div class="my-2">Wondering how our service works ?</div>
-						<div class="mb-2">
-							Confused about how we can improve your business ?
-						</div>
-						<div class="text-xs text-gray-600">
-							Dive into our FAQ for more details
-						</div>
-					</div>
-					<!--Right side-->
-					<div id="menu" class="md:w-2/3">
-						<div class="p-4">
-							<div class="mb-2">
-								<div
-										class="change-active active showSingle font-medium rounded-sm text-lg px-2 py-3 flex flex-row-reverse mt-2 cursor-pointer text-black bg-white hover:bg-grey"
-										target="1"
-								>
-									<div class="flex-auto">
-										How to change the animation of the LED ?
-									</div>
-									<div class="px-2 mt-1">
-										<div style="">
-											<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="100%"
-													height="100%"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													class="feather feather-chevron-down w-5 h-5"
-											>
-												<polyline points="6 9 12 15 18 9"></polyline>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="mb-2">
-								<div
-										class="change-active showSingle font-medium rounded-sm text-lg px-2 py-3 flex flex-row-reverse mt-2 cursor-pointer text-black bg-white hover:bg-grey"
-										target="2"
-								>
-									<div class="flex-auto">
-										How to use it with other integrations ?
-									</div>
-									<div class="px-2 mt-1">
-										<div style="">
-											<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="100%"
-													height="100%"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													class="feather feather-chevron-down w-5 h-5"
-											>
-												<polyline points="6 9 12 15 18 9"></polyline>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="mb-2">
-								<div
-										class="change-active showSingle font-medium rounded-sm text-lg px-2 py-3 flex flex-row-reverse mt-2 cursor-pointer text-black bg-white hover:bg-grey"
-										target="3"
-								>
-									<div class="flex-auto">How to build an app ?</div>
-									<div class="px-2 mt-1">
-										<div style="">
-											<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="100%"
-													height="100%"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													class="feather feather-chevron-down w-5 h-5"
-											>
-												<polyline points="6 9 12 15 18 9"></polyline>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="mb-2">
-								<div
-										class="change-active showSingle font-medium rounded-sm text-lg px-2 py-3 flex flex-row-reverse mt-2 cursor-pointer text-black bg-white hover:bg-grey"
-										target="4"
-								>
-									<div class="flex-auto">
-										How to download an app for mobile ?
-									</div>
-									<div class="px-2 mt-1">
-										<div style="">
-											<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="100%"
-													height="100%"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													class="feather feather-chevron-down w-5 h-5"
-											>
-												<polyline points="6 9 12 15 18 9"></polyline>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="mb-2">
-								<div
-										class="change-active showSingle font-medium rounded-sm text-lg px-2 py-3 flex flex-row-reverse mt-2 cursor-pointer text-black bg-white hover:bg-grey"
-										target="5"
-								>
-									<div class="flex-auto">How to use extensions ?</div>
-									<div class="px-2 mt-1">
-										<div style="">
-											<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="100%"
-													height="100%"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													class="feather feather-chevron-down w-5 h-5"
-											>
-												<polyline points="6 9 12 15 18 9"></polyline>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--Content-->
-					<div
-							id="content"
-							class="mb-2 cnt font-body-roman align-center text-justify text-xl"
-					>
-						<div class="">
-							<div
-									id="content-1"
-									class="p-4 text-gray-800 rounded-lg flex flex-col shadow-lg border-2 border-gray-300 targetDiv"
-							>
-								Lorem, ipsum dolor sit amet consectetur. Mollitia temporibus
-								doloremque non eligendi unde ipsam? Voluptatibus, suscipit
-								deserunt quidem delectus perferendis velit molestias,
-								veritatis officia fugiat cumque quaerat earum adipisci?
-							</div>
-							<div
-									id="content-2"
-									class="p-4 text-gray-800 rounded-lg flex flex-col shadow-lg border-2 border-gray-300 targetDiv"
-							>
-								Lorem, ipsum dolor sit amet consectetur . Mollitia temporibus
-								doloremque non eligendi unde ipsam? Voluptatibus, suscipit
-								deserunt quidem delectus perferendis velit molestias,
-								veritatis officia fugiat cumque quaerat earum adipisci?
-							</div>
-							<div
-									id="content-3"
-									class="p-4 text-gray-800 rounded-lg flex flex-col shadow-lg border-2 border-gray-300 targetDiv"
-							>
-								Lorem, ipsum dolor sit amet consectetur . Mollitia temporibus
-								doloremque non eligendi unde ipsam? Voluptatibus, suscipit
-								deserunt quidem delectus perferendis velit molestias,
-								veritatis officia fugiat cumque quaerat earum adipisci?
-							</div>
-							<div
-									id="content-4"
-									class="p-4 text-gray-800 rounded-lg flex flex-col shadow-lg border-2 border-gray-300 targetDiv"
-							>
-								Lorem, ipsum dolor sit amet consectetur . Mollitia temporibus
-								doloremque non eligendi unde ipsam? Voluptatibus, suscipit
-								deserunt quidem delectus perferendis velit molestias,
-								veritatis officia fugiat cumque quaerat earum adipisci?
-							</div>
-							<div
-									id="content-5"
-									class="p-4 text-gray-800 rounded-lg flex flex-col shadow-lg border-2 border-gray-300 targetDiv"
-							>
-								Lorem, ipsum dolor sit amet consectetur. Mollitia temporibus
-								doloremque non eligendi unde ipsam? Voluptatibus, suscipit
-								deserunt quidem delectus perferendis velit molestias,
-								veritatis officia fugiat cumque quaerat earum adipisci?
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="flex flex-col p-10 w-full bg-gray-100 lg:flex-row">
+  <div
+    class="flex-shrink-0 pb-5 w-full font-header-bold text-3xl select-none lg:pb-0 lg:w-48"
+  >
+    Frequently asked Questions
+  </div>
+  <div class="flex-grow select-none space-y-4">
+    <a
+      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200"
+    >
+      <div
+        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
+      >
+        How to change the animation of the LED ?
+      </div>
+      <div class="block flex-shrink-0 w-1/12">
+        <i class="fas fa-chevron-down"> </i>
+      </div>
+      <div class="content text-justify font-body-light text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </div>
+    </a>
+    <a
+      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200"
+    >
+      <div
+        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
+      >
+        How to use it with other integrations ?
+      </div>
+      <div class="block flex-shrink-0 w-1/12">
+        <i class="fas fa-chevron-down"> </i>
+      </div>
+      <div class="content text-justify font-body-light text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </div>
+    </a>
+    <a
+      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200"
+    >
+      <div
+        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
+      >
+        How to download the app for mobile ?
+      </div>
+      <div class="block flex-shrink-0 w-1/12">
+        <i class="fas fa-chevron-down"> </i>
+      </div>
+      <div class="content text-justify font-body-light text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </div>
+    </a>
+    <a
+      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200"
+    >
+      <div
+        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
+      >
+        How to use extensions ?
+      </div>
+      <div class="block flex-shrink-0 w-1/12">
+        <i class="fas fa-chevron-down"> </i>
+      </div>
+      <div class="content text-justify font-body-light text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </div>
+    </a>
+  </div>
+</div>
 
 {% endblock %}
