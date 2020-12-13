@@ -1,45 +1,63 @@
+<!-- prettier-ignore -->
 {% extends "template.html" %}
 {% block title %}4 SST{% endblock %}
 {% block head %} {{ super() }} {% endblock %}
 {% block content %}
 
-	<div class="pt-20 grid grid-cols-2 grid-rows-2 gap-6">
-		<!--Dark mode-->
-		<div class="flex items-center justify-end">
-			<label
-					for="toggle"
-					class="flex justify-start text-md text-text-primary static font-header-medium items-center"
-			>
-				Dark Mode
-			</label>
-		</div>
-		<div class="flex items-center justify-start">
-			<div class="switch colour">
-				<input id="check3" class="switch-checkbox hidden" type="checkbox" />
-				<label
-						for="check3"
-						class="switch-label block w-12 h-6 rounded-full transition-all duration-150 ease-out"
-				></label>
-			</div>
-		</div>
+<div class="flex flex-col flex-wrap pt-20 w-full space-y-6 lg:space-y-3">
+  <!--Dark mode-->
+  <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0">
+    <div
+      class="flex content-center justify-center pr-0 w-full lg:justify-end lg:pr-2 lg:w-1/2"
+    >
+      <label
+        for="toggle"
+        class="text-md text-text-primary static flex items-center justify-start font-header-medium"
+      >
+        Dark Mode
+      </label>
+    </div>
+    <div
+      class="flex items-center justify-center pl-0 w-full lg:justify-start lg:pl-2 lg:w-1/2"
+    >
+      <div class="switch colour h-6">
+        <input id="check3" class="switch-checkbox hidden" type="checkbox" />
+        <label
+          for="check3"
+          class="switch-label block w-12 h-6 rounded-full transition-all duration-150 ease-out"
+        ></label>
+      </div>
+    </div>
+  </div>
 
-		<!-- Language -->
-		<div class="flex items-center justify-end">
-			<label
-					for="toggle"
-					class="flex justify-start text-text-primary static font-header-medium text-md items-center"
-			>
-				Language
-			</label>
-		</div>
-		<div class="relative inline-flex">
-			<select
-					class="transition-all border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
-			>
-				<option>English</option>
-				<option>Vietnamese</option>
-			</select>
-		</div>
-	</div>
+  <!--Separator-->
+  <div class="w-full h-0.5 bg-gray-100" id="settingsSep"></div>
+
+  <!-- Language -->
+  <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0">
+    <div
+      class="flex content-center justify-center pr-0 w-full lg:justify-end lg:pr-2 lg:w-1/2"
+    >
+      <label
+        for="toggle"
+        class="text-text-primary text-md static flex items-center justify-start font-header-medium"
+      >
+        Language
+      </label>
+    </div>
+    <div
+      class="flex content-center justify-center pl-0 w-full lg:justify-start lg:pl-2 lg:w-1/2"
+    >
+      <div class="relative inline-flex">
+        <select
+          class="pl-5 pr-10 h-10 text-gray-600 bg-white border border-gray-300 hover:border-gray-400 rounded-full focus:outline-none appearance-none transition-all"
+        >
+          <option>English</option>
+          <option>Vietnamese</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

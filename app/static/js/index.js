@@ -68,6 +68,8 @@ let mobileNav = () => {
     $(".navTxt").each((i, obj) => {
       $(obj).toggleClass("hidden");
     });
+  } else {
+    $("#settingsSep").toggleClass("hidden");
   }
 };
 
