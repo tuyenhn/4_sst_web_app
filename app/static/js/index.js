@@ -97,7 +97,11 @@ $(window).ready(() => {
   $("#slider-2").hide();
 
   // SVG height adjustment
-  $("#svg4").height($(window).height() - 80);
+  if (Modernizr.mq("(min-width: 1024px)")) {
+    $("#svg4").height($(window).height() - 80);
+  } else {
+    $("#svg4").width($(window).width() - 25);
+  }
 
   loopSlider();
   mobileNav();
