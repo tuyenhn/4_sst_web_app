@@ -1,8 +1,5 @@
-<!-- prettier-ignore -->
-{% extends "template.html" %}
-{% block title %}4 SST{% endblock %}
-{% block head %} {{ super() }} {% endblock %}
-{% block content %}
+{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
+%} {{ super() }} {% endblock %} {% block content %}
 
 <div class="flex flex-col flex-wrap pt-20 w-full space-y-6 lg:space-y-3">
   <!--Dark mode-->
@@ -18,15 +15,24 @@
       </label>
     </div>
     <div
-      class="flex items-center justify-center pl-0 w-full lg:justify-start lg:pl-2 lg:w-1/2"
+      class="flex items-center justify-center pl-0 w-full lg:justify-start lg:pl-3 lg:w-1/2"
     >
-      <div class="switch colour h-6">
-        <input id="check3" class="switch-checkbox hidden" type="checkbox" />
-        <label
-          for="check3"
-          class="switch-label block w-12 h-6 rounded-full transition-all duration-150 ease-out"
-        ></label>
-      </div>
+      <!-- Toggle Button -->
+      <label for="toggleA" class="flex items-center cursor-pointer">
+        <!-- toggle -->
+        <div class="relative">
+          <!-- input -->
+          <input id="toggleA" type="checkbox" class="hidden" />
+          <!-- line -->
+          <div
+            class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"
+          ></div>
+          <!-- dot -->
+          <div
+            class="toggle__dot absolute inset-y-0 left-0 w-6 h-6 bg-white border rounded-full shadow"
+          ></div>
+        </div>
+      </label>
     </div>
   </div>
 
@@ -49,12 +55,14 @@
       class="flex content-center justify-center pl-0 w-full lg:justify-start lg:pl-2 lg:w-1/2"
     >
       <div class="relative inline-flex">
-        <select
-          class="pl-5 pr-10 h-10 text-gray-600 bg-white border border-gray-300 hover:border-gray-400 rounded-full focus:outline-none appearance-none transition-all"
-        >
-          <option>English</option>
-          <option>Vietnamese</option>
-        </select>
+        <label>
+          <select
+            class="pl-5 pr-10 h-10 text-gray-600 bg-white border border-gray-300 hover:border-gray-400 rounded-full focus:outline-none appearance-none transition-all"
+          >
+            <option>English</option>
+            <option>Vietnamese</option>
+          </select>
+        </label>
       </div>
     </div>
   </div>
