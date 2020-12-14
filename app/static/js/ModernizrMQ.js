@@ -1,76 +1,65 @@
 /*! modernizr 3.6.0 (Custom Build) | MIT *
- * https://modernizr.com/download/?-mediaqueries-setclasses !*/
+ * https://modernizr.com/download/?-mediaqueries !*/
 !(function (e, n, t) {
   function o(e, n) {
     return typeof e === n;
   }
   function a() {
-    var e, n, t, a, s, i, r;
-    for (var l in f)
-      if (f.hasOwnProperty(l)) {
+    var e, n, t, a, i, s, r;
+    for (var d in l)
+      if (l.hasOwnProperty(d)) {
         if (
           ((e = []),
-          (n = f[l]),
+          (n = l[d]),
           n.name &&
             (e.push(n.name.toLowerCase()),
             n.options && n.options.aliases && n.options.aliases.length))
         )
           for (t = 0; t < n.options.aliases.length; t++)
             e.push(n.options.aliases[t].toLowerCase());
-        for (a = o(n.fn, "function") ? n.fn() : n.fn, s = 0; s < e.length; s++)
-          (i = e[s]),
-            (r = i.split(".")),
+        for (a = o(n.fn, "function") ? n.fn() : n.fn, i = 0; i < e.length; i++)
+          (s = e[i]),
+            (r = s.split(".")),
             1 === r.length
               ? (Modernizr[r[0]] = a)
               : (!Modernizr[r[0]] ||
                   Modernizr[r[0]] instanceof Boolean ||
                   (Modernizr[r[0]] = new Boolean(Modernizr[r[0]])),
                 (Modernizr[r[0]][r[1]] = a)),
-            d.push((a ? "" : "no-") + r.join("-"));
+            f.push((a ? "" : "no-") + r.join("-"));
       }
-  }
-  function s(e) {
-    var n = u.className,
-      t = Modernizr._config.classPrefix || "";
-    if ((p && (n = n.baseVal), Modernizr._config.enableJSClass)) {
-      var o = new RegExp("(^|\\s)" + t + "no-js(\\s|$)");
-      n = n.replace(o, "$1" + t + "js$2");
-    }
-    Modernizr._config.enableClasses &&
-      ((n += " " + t + e.join(" " + t)),
-      p ? (u.className.baseVal = n) : (u.className = n));
   }
   function i() {
     return "function" != typeof n.createElement
       ? n.createElement(arguments[0])
-      : p
+      : c
       ? n.createElementNS.call(n, "http://www.w3.org/2000/svg", arguments[0])
       : n.createElement.apply(n, arguments);
   }
-  function r() {
+  function s() {
     var e = n.body;
-    return e || ((e = i(p ? "svg" : "body")), (e.fake = !0)), e;
+    return e || ((e = i(c ? "svg" : "body")), (e.fake = !0)), e;
   }
-  function l(e, t, o, a) {
-    var s,
+  function r(e, t, o, a) {
+    var r,
       l,
       d,
       f,
       c = "modernizr",
       p = i("div"),
-      m = r();
+      m = s();
     if (parseInt(o, 10))
       for (; o--; )
         (d = i("div")), (d.id = a ? a[o] : c + (o + 1)), p.appendChild(d);
     return (
-      (s = i("style")),
-      (s.type = "text/css"),
-      (s.id = "s" + c),
-      (m.fake ? m : p).appendChild(s),
+      (r = i("style")),
+      (r.type = "text/css"),
+      (r.id = "s" + c),
+      (m.fake ? m : p).appendChild(r),
       m.appendChild(p),
-      s.styleSheet
-        ? (s.styleSheet.cssText = e)
-        : s.appendChild(n.createTextNode(e)),
+      r.styleSheet
+        ? (r.styleSheet.cssText = e)
+        : r.appendChild(n.createTextNode(e)),
       (p.id = c),
       m.fake &&
         ((m.style.background = ""),
@@ -85,9 +74,8 @@
       !!l
     );
   }
-  var d = [],
-    f = [],
-    c = {
+  var l = [],
+    d = {
       _version: "3.6.0",
       _config: {
         classPrefix: "",
@@ -103,17 +91,18 @@
         }, 0);
       },
       addTest: function (e, n, t) {
-        f.push({ name: e, fn: n, options: t });
+        l.push({ name: e, fn: n, options: t });
       },
       addAsyncTest: function (e) {
-        f.push({ name: null, fn: e });
+        l.push({ name: null, fn: e });
       },
     },
     Modernizr = function () {};
-  (Modernizr.prototype = c), (Modernizr = new Modernizr());
-  var u = n.documentElement,
-    p = "svg" === u.nodeName.toLowerCase(),
-    m = (function () {
+  (Modernizr.prototype = d), (Modernizr = new Modernizr());
+  var f = [],
+    u = n.documentElement,
+    c = "svg" === u.nodeName.toLowerCase(),
+    p = (function () {
       var n = e.matchMedia || e.msMatchMedia;
       return n
         ? function (e) {
@@ -123,7 +112,7 @@
         : function (n) {
             var t = !1;
             return (
-              l(
+              r(
                 "@media " + n + " { #modernizr { position: absolute; } }",
                 function (n) {
                   t =
@@ -138,12 +127,11 @@
             );
           };
     })();
-  (c.mq = m),
-    Modernizr.addTest("mediaqueries", m("only all")),
+  (d.mq = p),
+    Modernizr.addTest("mediaqueries", p("only all")),
     a(),
-    s(d),
-    delete c.addTest,
-    delete c.addAsyncTest;
-  for (var h = 0; h < Modernizr._q.length; h++) Modernizr._q[h]();
+    delete d.addTest,
+    delete d.addAsyncTest;
+  for (var m = 0; m < Modernizr._q.length; m++) Modernizr._q[m]();
   e.Modernizr = Modernizr;
 })(window, document);

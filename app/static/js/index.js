@@ -63,13 +63,23 @@ slider.on("input", () => {
 });
 
 // Navigation bar for mobile
-let mobileNav = () => {
-  if (!Modernizr.mq("(min-width: 1024px)")) {
+let sep = $("#settingsSep");
+sep.addClass("hidden");
+let responsiveAdj = () => {
+  if (Modernizr.mq("(min-width: 1024px)")) {
+    // large breakpoint
+    if (!sep.hasClass("hidden")) sep.addClass("hidden");
     $(".navTxt").each((i, obj) => {
-      $(obj).toggleClass("hidden");
+      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
     });
+    $("#svg4").height($(window).height() - 80);
   } else {
-    $("#settingsSep").toggleClass("hidden");
+    // smaller than large breakpoint
+    if (sep.hasClass("hidden")) sep.removeClass("hidden");
+    $(".navTxt").each((i, obj) => {
+      if (!$(obj).hasClass("hidden")) $(obj).addClass("hidden");
+    });
+    $("#svg4").width($(window).width() - 25);
   }
 };
 
@@ -97,13 +107,8 @@ $(document).ready(() => {
 $(window).ready(() => {
   $("#slider-2").hide();
 
-  // SVG height adjustment
-  if (Modernizr.mq("(min-width: 1024px)")) {
-    $("#svg4").height($(window).height() - 80);
-  } else {
-    $("#svg4").width($(window).width() - 25);
-  }
-
+  responsiveAdj();
   loopSlider();
-  mobileNav();
 });
+
+$(window).resize(responsiveAdj);
