@@ -63,23 +63,47 @@ slider.on("input", () => {
 });
 
 // Navigation bar for mobile
-let sep = $("#settingsSep");
-sep.addClass("hidden");
+let sep = $(".mobileSep");
+sep.each((i, obj) => {
+  $(obj).addClass("hidden");
+});
+
 let responsiveAdj = () => {
   if (Modernizr.mq("(min-width: 1024px)")) {
     // large breakpoint
-    if (!sep.hasClass("hidden")) sep.addClass("hidden");
+    sep.each((i, obj) => {
+      if (!$(obj).hasClass("hidden")) $(obj).addClass("hidden");
+    });
     $(".navTxt").each((i, obj) => {
       if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
     });
-    $("#svg4").height($(window).height() - 80);
+  } else if (Modernizr.mq("(min-width: 768px)")) {
+    // medium breakpoint
+    sep.each((i, obj) => {
+      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
+    });
+    $(".navTxt").each((i, obj) => {
+      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
+    });
   } else {
-    // smaller than large breakpoint
-    if (sep.hasClass("hidden")) sep.removeClass("hidden");
+    // smaller breakpoint
+    sep.each((i, obj) => {
+      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
+    });
     $(".navTxt").each((i, obj) => {
       if (!$(obj).hasClass("hidden")) $(obj).addClass("hidden");
     });
-    $("#svg4").width($(window).width() - 25);
+  }
+};
+
+let resizeSvg = () => {
+  let svg = $("#svg4");
+  if ($(window).height() > $(window).width()) {
+    svg.width($(window).width() - 25);
+    svg.height("auto");
+  } else {
+    svg.width("auto");
+    svg.height($(window).height() - 80);
   }
 };
 
@@ -108,7 +132,11 @@ $(window).ready(() => {
   $("#slider-2").hide();
 
   responsiveAdj();
+  resizeSvg();
   loopSlider();
 });
 
-$(window).resize(responsiveAdj);
+$(window).resize(() => {
+  responsiveAdj();
+  resizeSvg();
+});
