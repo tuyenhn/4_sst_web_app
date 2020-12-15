@@ -18,11 +18,15 @@
       class="flex items-center justify-center pl-0 w-full lg:justify-start lg:pl-3 lg:w-1/2"
     >
       <!-- Toggle Button -->
-      <label for="toggleA" class="flex items-center cursor-pointer">
+      <label
+        for="darkModeInp"
+        class="flex items-center cursor-pointer"
+        id="darkModeLabel"
+      >
         <!-- toggle -->
         <div class="relative">
           <!-- input -->
-          <input id="toggleA" type="checkbox" class="hidden" />
+          <input id="darkModeInp" type="checkbox" class="hidden" />
           <!-- line -->
           <div
             class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"
@@ -64,6 +68,20 @@
           </select>
         </label>
       </div>
+    </div>
+  </div>
+
+  <!--Separator-->
+  <div class="mobileSep w-full h-0.5 bg-gray-100"></div>
+
+  <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0">
+    <div class="flex content-center justify-center w-full">
+      <button
+        class="px-2 py-1 w-1/4 text-white bg-purple-600 hover:bg-purple-700 border rounded shadow-lg"
+        id="settingsSaveBtn"
+      >
+        Save
+      </button>
     </div>
   </div>
 </div>

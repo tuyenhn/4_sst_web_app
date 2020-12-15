@@ -1,6 +1,6 @@
 module.exports = {
   purge: ["./../templates/*.html", "./js/*.js"],
-  // darkMode: false, // or 'media' or 'class'
+  darkMode: "class",
   theme: {
     fontFamily: {
       "header-light": "Museo-300",

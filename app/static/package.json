@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@fouita/slider": "0.0.3",
     "jquery": "^3.5.1",
+    "js-cookie": "^2.2.1",
     "postcss": "^8.1.14",
     "postcss-cli": "^8.3.0",
     "prettier": "2.2.1",
