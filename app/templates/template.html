@@ -33,7 +33,6 @@
 
     <!--Javascript-->
     <script src="../static/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../static/node_modules/js-cookie/src/js.cookie.js"></script>
     <script async defer src="../static/js/index.js"></script>
     {% endblock %}
   </head>
@@ -59,7 +58,7 @@
           >
             <i class="fas fa-home fa-lg" style="color: white"></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-light">Home</p>
+              <p class="navTxt ml-2 text-white font-header-light">{{ session["selectedLang"]["home"] }}</p>
             </div>
           </a>
         </div>
@@ -70,7 +69,7 @@
           >
             <i class="fas fa-paint-brush fa-lg" style="color: white"></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-light">Paint</p>
+              <p class="navTxt ml-2 text-white font-header-light">{{ session["selectedLang"]["paint"] }}</p>
             </div>
           </a>
         </div>
@@ -81,7 +80,7 @@
           >
             <i class="fas fa-cogs fa-lg" style="color: white"></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-light">Settings</p>
+              <p class="navTxt ml-2 text-white font-header-light">{{ session["selectedLang"]["settings"] }}</p>
             </div>
           </a>
         </div>
@@ -92,7 +91,7 @@
           >
             <i class="fas fa-question-circle fa-lg" style="color: white"></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-light">Help</p>
+              <p class="navTxt ml-2 text-white font-header-light">{{ session["selectedLang"]["help"] }}</p>
             </div>
           </a>
         </div>

@@ -1,9 +1,11 @@
+from json import load
 from os import path, urandom
 
 from flask import Flask, render_template, session, request, redirect
 
 dirname = path.dirname(__file__)
 certpath = path.join(dirname, "cert/")
+languageJson = load(open(dirname + "/static/language.json"))
 
 app = Flask(__name__)
 app.secret_key = urandom(24)
@@ -38,7 +40,7 @@ def help():
 
 
 def setLang(lang):
-	pass
+	session["selectedLang"] = languageJson["language"][lang]
 
 
 @app.route("/applySettings", methods=["post"])
@@ -51,7 +53,14 @@ def applySettings():
 		session["theme"] = ""
 		session["darkBtnInp"] = ""
 
+	userLang = request.form["languageInp"]
+
+	if userLang != session["lang"]:
+		session["lang"] = userLang
+		setLang(userLang)
+
 	return redirect("/settings")
+
 
 app.config["SERVER_NAME"] = "4sst.rmit:443"
 app.run(debug=True, ssl_context=(certpath + "4sst.rmit.pem", certpath + "4sst.rmit-key.pem"))
