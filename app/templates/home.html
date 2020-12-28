@@ -40,7 +40,9 @@
       class="flex flex-col p-5 border-2 border-gray-300 rounded-lg shadow-lg"
     >
       <div>
-        <h2 class="text-center font-header-bold text-2xl font-bold">{{ session["selectedLang"]["login"] }}</h2>
+        <h2 class="text-center font-header-bold text-2xl font-bold">
+          {{ session["selectedLang"]["login"] }}
+        </h2>
       </div>
 
       <div>
@@ -92,7 +94,9 @@
                     type="checkbox"
                     class="text-indigo-600 border-gray-300 focus:border-indigo-300 rounded shadow-sm transition-all focus:ring-indigo-200 focus:ring-opacity-50 focus:ring"
                   />
-                  <span class="font-body-roman">{{ session["selectedLang"]["remember me"] }}</span>
+                  <span class="font-body-roman"
+                    >{{ session["selectedLang"]["remember me"] }}</span
+                  >
                 </label>
               </div>
               <div class="lg:w-1/2">
@@ -101,10 +105,9 @@
             </div>
 
             <div>
-              <input
-                type="submit" value="{{ session["selectedLang"]["submit"] }}"
-                class="w-full h-8 text-white bg-blue-600 hover:bg-blue-700 rounded-lg cursor-pointer"
-              />
+              <input type="submit" value="{{
+              session["selectedLang"]["submit"]}}" class="w-full h-8 text-white
+              bg-blue-600 hover:bg-blue-700 rounded-lg cursor-pointer" />
             </div>
           </div>
         </form>

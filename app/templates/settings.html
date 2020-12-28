@@ -66,19 +66,12 @@
           name="languageInp"
           id="languageInp"
         >
-          {% if session["lang"] == "English" %}
-          <option value="English" selected>
-          {% else %}
-          <option value="English">
-          {% endif %}
+          <option value="English" {% if session["lang"] == "English" %} selected {% else %} {% endif %}>
             {{ session["selectedLang"]["english"] }}
           </option>
 
-          {% if session["lang"] == "Vietnamese" %}
-          <option value="Vietnamese" selected>
-          {% else %}
-          <option value="Vietnamese">
-          {% endif %}
+          
+          <option value="Vietnamese" {% if session["lang"] == "Vietnamese" %} selected {% else %} {% endif %}>
             {{ session["selectedLang"]["vietnamese"] }}
           </option>
         </select>
