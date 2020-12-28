@@ -69,7 +69,7 @@ sep.each((i, obj) => {
 });
 
 let responsiveAdj = () => {
-  if (Modernizr.mq("(min-width: 1024px)")) {
+  if (matchMedia("(min-width: 1024px)").matches) {
     // large breakpoint
     sep.each((i, obj) => {
       if (!$(obj).hasClass("hidden")) $(obj).addClass("hidden");
@@ -77,7 +77,7 @@ let responsiveAdj = () => {
     $(".navTxt").each((i, obj) => {
       if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
     });
-  } else if (Modernizr.mq("(min-width: 768px)")) {
+  } else if (matchMedia("(min-width: 1024px)").matches) {
     // medium breakpoint
     sep.each((i, obj) => {
       if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
