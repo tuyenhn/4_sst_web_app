@@ -3,13 +3,13 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      "header-light": "Museo-300",
-      "header-medium": "Museo-500",
-      "header-bold": "Museo-700",
-      "body-light": "Helvetica Neue Light",
-      "body-roman": "Helvetica Neue Roman",
-      "body-medium": "Helvetica Neue Medium",
-      "body-bold": "Helvetica Neue Bold",
+      "header-bold": "Open Sans Bold",
+      "header-light": "Open Sans Light",
+      "header-medium": "Open Sans Medium",
+      "body-light": "Nunito Sans Light",
+      "body-roman": "Nunito Sans Roman",
+      "body-medium": "Nunito Sans Medium",
+      "body-bold": "Nunito Sans Bold",
     },
     backgroundColor: (theme) => ({
       ...theme("colors"),

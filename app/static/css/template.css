@@ -2,70 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-  headlines and single line statements per RMIT's brand guidelines
-*/
 @font-face {
-    font-family: "Museo-500";
-    src: url("../fonts/Museo-500/font.woff2") format("woff2"),
-    url("../fonts/Museo-500/font.woff") format("woff");
-    font-display: swap;
+  font-family: "Open Sans Bold";
+  src: url("../fonts/OpenSans/OpenSans-Bold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("../fonts/OpenSans/OpenSans-Light.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans Medium";
+  src: url("../fonts/OpenSans/OpenSans-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Museo-300";
-    src: url("../fonts/Museo-300/font.woff2") format("woff2"),
-    url("../fonts/Museo-300/font.woff") format("woff");
-    font-display: swap;
+  font-family: "Nunito Sans Light";
+  src: url("../fonts/NunitoSans/NunitoSans-Light.ttf");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Museo-700";
-    src: url("../fonts/Museo-700/font.woff2") format("woff2"),
-    url("../fonts/Museo-700/font.woff") format("woff");
-    font-display: swap;
-}
-
-/* 
-  large slabs of text such as brochure spreads, catalogues and forms
-  also appropriate for subheads, charts and diagrams per RMIT's brand guidelines
-*/
-@font-face {
-    font-family: "Helvetica Neue Light";
-    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Light.ttf");
-    font-display: swap;
+  font-family: "Nunito Sans Bold";
+  src: url("../fonts/NunitoSans/NunitoSans-Bold.ttf");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Helvetica Neue Bold";
-    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Bold.ttf");
-    font-display: swap;
+  font-family: "Nunito Sans Medium";
+  src: url("../fonts/NunitoSans/NunitoSans-SemiBold.ttf");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Helvetica Neue Medium";
-    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Medium.ttf");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Helvetica Neue Roman";
-    src: url("../fonts/Helvetica_Neue/Helvetica_Neue_Roman.ttf");
-    font-display: swap;
+  font-family: "Nunito Sans Roman";
+  src: url("../fonts/NunitoSans/NunitoSans-Regular.ttf");
+  font-display: swap;
 }
 
 .toggle__dot {
-  top: -.25rem;
-  left: -.25rem;
+  top: -0.25rem;
+  left: -0.25rem;
   transition: all 0.3s ease-in-out;
 }
 
-.toggle__line{
-    background-color: #eeeeee;
+.toggle__line {
+  background-color: #eeeeee;
 }
 
 input:checked ~ .toggle__line {
-    background-color: #bababa;
+  background-color: #bababa;
 }
 
 input:checked ~ .toggle__dot {
