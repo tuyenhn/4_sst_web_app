@@ -154,7 +154,6 @@ cert/*
 
 # Logs
 logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -223,11 +222,9 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
-.cache
 .parcel-cache
 
 # Next.js build output
@@ -269,4 +266,14 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-app/static/compiled-css/
+.idea/.gitignore
+.idea/4_sst_web_app.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/prettier.xml
+.idea/vcs.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/profiles_settings.xml
+
+app/static/compiled-css/template.css
