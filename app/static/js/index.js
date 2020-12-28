@@ -122,15 +122,6 @@ let faqCollapse = () => {
   });
 };
 
-// Dark mode
-let settingsBtn = $("#settingsSaveBtn");
-let darkModeInp = $("#darkModeInp");
-let html = $("html");
-settingsBtn.click(() => {
-  Cookies.set("darkMode", darkModeInp.prop("checked"));
-  html.toggleClass("dark", Cookies.get("darkMode") === "true");
-});
-
 // prevent FUOC
 $(document).ready(() => {
   $(".no-fouc").removeClass("no-fouc");
@@ -143,12 +134,6 @@ $(window).ready(() => {
   responsiveAdj();
   resizeSvg();
   loopSlider();
-
-  // Dark mode
-  let isDark = Cookies.get("darkMode");
-  if (isDark === "undefined") Cookies.set("darkMode", "false");
-  html.toggleClass("dark", Cookies.get("darkMode") === "true");
-  darkModeInp.prop("checked", html.hasClass("dark"));
 });
 
 $(window).resize(() => {

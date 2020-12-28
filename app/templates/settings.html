@@ -1,18 +1,21 @@
 {% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
 %} {{ super() }} {% endblock %} {% block content %}
 
-<div class="flex flex-col flex-wrap pt-20 w-full space-y-6 lg:space-y-3">
+<form
+  action="/applySettings"
+  method="post"
+  class="block flex flex-col flex-wrap pt-20 w-full space-y-6 lg:space-y-3"
+>
   <!--Dark mode-->
   <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0">
     <div
       class="flex content-center justify-center pr-0 w-full lg:justify-end lg:pr-2 lg:w-1/2"
     >
-      <label
-        for="toggle"
+      <div
         class="text-md text-text-primary static flex items-center justify-start font-header-medium"
       >
         Dark Mode
-      </label>
+      </div>
     </div>
     <div
       class="flex items-center justify-center pl-0 w-full lg:justify-start lg:pl-3 lg:w-1/2"
@@ -21,12 +24,11 @@
       <label
         for="darkModeInp"
         class="flex items-center cursor-pointer"
-        id="darkModeLabel"
       >
         <!-- toggle -->
         <div class="relative">
           <!-- input -->
-          <input id="darkModeInp" type="checkbox" class="hidden" />
+          <input id="darkModeInp" type="checkbox" class="hidden" name="darkModeInp" {{ session["darkBtnInp"] }}/>
           <!-- line -->
           <div
             class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"
@@ -78,12 +80,12 @@
     <div class="flex content-center justify-center w-full">
       <button
         class="px-2 py-1 w-1/4 text-white bg-purple-600 hover:bg-purple-700 border rounded shadow-lg"
-        id="settingsSaveBtn"
+        type="submit"
       >
         Save
       </button>
     </div>
   </div>
-</div>
+</form>
 
 {% endblock %}
