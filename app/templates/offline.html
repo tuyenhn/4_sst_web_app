@@ -1,13 +1,10 @@
 {% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
 %} {{ super() }} {% endblock %} {% block content %}
 <div class="container my-8 mx-auto px-4 leading-normal">
-  <h2 class="font-header-bold mb-6">404 - Page not found</h2>
-  <p class="font-body-medium">
-    The page you are looking for might have been removed had its name changed or
-    is temporarily unavailable.
-  </p>
+  <h2 class="font-header-bold mb-6">{{ session["selectedLang"]["404"] }}</h2>
+  <p class="font-body-medium">{{ session["selectedLang"]["offline_text"] }}</p>
   <ul class="list-reset text-black mb-8 p-8 text-grey-darker rounded shadow-lg">
-    Try the following:
+    {{ session["selectedLang"]["list"] }}
     <li class="flex items-center mb-3 font-body-roman">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +15,7 @@
         <path
           d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
         /></svg
-      >Checking if you are in range of the SST network
+      >{{ session["selectedLang"]["solution_1"] }}
     </li>
     <li class="flex items-center mb-3 font-body-roman">
       <svg
@@ -30,7 +27,7 @@
         <path
           d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
         /></svg
-      >Ensuring you are connecting to 4 SST network
+      >{{ session["selectedLang"]["solution_2"] }}
     </li>
     <li class="flex items-center mb-3 font-body-roman">
       <svg
@@ -42,7 +39,7 @@
         <path
           d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
         /></svg
-      >If none of above works , please contact us at:
+      >{{ session["selectedLang"]["solution_3"] }}
     </li>
   </ul>
   <!--Return button-->
@@ -52,7 +49,7 @@
     <button
       class="px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 hover:shadow-md font-body-medium text-white"
     >
-      Retry
+      {{ session["selectedLang"]["retry"] }}
     </button>
   </div>
 </div>

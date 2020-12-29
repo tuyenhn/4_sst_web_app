@@ -19,7 +19,14 @@
       "language": "Ngôn ngữ",
       "english": "Tiếng Anh",
       "vietnamese": "Tiếng Việt",
-      "faq": "Câu hỏi thường gặp"
+      "faq": "Câu hỏi thường gặp",
+      "retry":"Thử lại",
+      "404":"Lỗi 404 , Trang không tìm thấy",
+      "offline_text":"Trang bạn đang tìm kiếm có thể đã bị xóa vì đã đổi tên hoặc tạm thời không thể truy cập.",
+      "list":"Hãy thử những cách sau",
+      "solution_1":"Hãy kiểm tra thử xem bạn có nằm trong phạm vi của mạng hay không",
+      "solution_2":"Đảm bảo rằng bạn đang kết nối tới mạng 4 SST",
+      "solution_3":"Nếu tất cả cách trên vẫn không được, hãy liên hệ với chúng tôi tại: "
     },
     "English": {
       "home": "Home",
@@ -40,7 +47,14 @@
       "language": "Language",
       "english": "English",
       "vietnamese": "Vietnamese",
-      "faq": "Frequently Asked Questions"
+      "faq": "Frequently Asked Questions",
+      "retry":"Retry",
+      "404":"404 - Page not found",
+      "offline_text":"The page you are looking for might have been removed had its name changed or is temporarily unavailable.",
+      "list":"Try the following:",
+      "solution_1":"Checking if you are in range of the SST network",
+      "solution_2":"Ensuring you are connecting to 4 SST network",
+      "solution_3":"If none of above works , please contact us at:"
     }
   }
 }
