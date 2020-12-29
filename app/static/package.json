@@ -5,7 +5,7 @@
   "main": "./js/index.js",
   "scripts": {
     "compile-css": "npx postcss css/template.css -o compiled-css/template.css",
-    "clean-css": "uncss ../templates/*.html ./compiled-css/template.css -o compiled-css/template.css"
+    "watch": "watch \"npm run compile-css\" ./css"
   },
   "repository": {
     "type": "git",
@@ -18,18 +18,15 @@
   "homepage": "https://github.com/tuyenhn/4_sst_web_app#readme",
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",
-    "autoprefixer": "^10.0.4",
-    "pretty-checkbox": "^3.0.3",
-    "tailwindcss": "^2.0.1"
+    "autoprefixer": "^10.1.0",
+    "cssnano": "^4.1.10",
+    "tailwindcss": "^2.0.2",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "@fouita/slider": "0.0.3",
     "jquery": "^3.5.1",
-    "postcss": "^8.1.14",
-    "postcss-cli": "^8.3.0",
-    "prettier": "2.2.1",
-    "prettier-plugin-tailwind": "^2.2.8",
-    "uncss": "^0.17.3"
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.0"
   }
 }

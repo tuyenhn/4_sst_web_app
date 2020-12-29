@@ -1,6 +1,12 @@
 module.exports = {
-  purge: ["./../templates/*.html", "./js/*.js"],
   darkMode: "class",
+  purge: {
+    enabled: true,
+    content: ["../templates/*.html", "./js/*.js"],
+    options: {
+      safelist: ["dark"],
+    },
+  },
   theme: {
     fontFamily: {
       "header-bold": "Open Sans Bold",
@@ -15,21 +21,6 @@ module.exports = {
       ...theme("colors"),
       "bg-primary": "#000054",
     }),
-
-    extend: {
-      backgroundOpacity: {
-        80: "0.8",
-      },
-    },
-  },
-  variants: {
-    display: ["group-hover"],
-    extend: {
-      backgroundColor: ["active"],
-      textColor: ["active"],
-      margin: ["hover", "focus"],
-      opacity: ["responsive", "hover"],
-    },
   },
   experimental: {
     darkModeVariant: true,

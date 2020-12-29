@@ -269,3 +269,4 @@ dist
 .idea/*
 
 app/static/node_modules
+app/static/compiled-css/template.css
