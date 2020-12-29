@@ -266,14 +266,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.idea/.gitignore
-.idea/4_sst_web_app.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/prettier.xml
-.idea/vcs.xml
-.idea/codeStyles/codeStyleConfig.xml
-.idea/codeStyles/Project.xml
-.idea/inspectionProfiles/profiles_settings.xml
+.idea/*
 
-app/static/compiled-css/template.css
+app/static/node_modules
