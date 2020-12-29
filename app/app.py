@@ -13,7 +13,7 @@ app.secret_key = urandom(24)
 
 
 @app.before_first_request
-def firstSetup():
+def sessionSetup():
     session["theme"] = ""
     session["darkBtnInp"] = ""
     session["lang"] = "English"
