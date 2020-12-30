@@ -4,8 +4,11 @@
   "description": "web app development for RMIT's number 4 ",
   "main": "./js/index.js",
   "scripts": {
-    "compile-css": "npx postcss css/template.css -o compiled-css/template.css",
-    "watch": "watch \"npm run compile-css\" ./css"
+    "build:css": "npx postcss css/template.css -o prod/css/template.css",
+    "build:index": "npx uglifyjs js/index.js -o prod/js/index.js",
+    "build:service-worker": "npx uglifyjs js/service-worker.js -o prod/js/service-worker.js",
+    "build:js": "npm run build:index && npm run build:service-worker",
+    "watch": "watch \"npm run build:css\" ./css"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
     "autoprefixer": "^10.1.0",
     "cssnano": "^4.1.10",
     "tailwindcss": "^2.0.2",
+    "uglify-js": "^3.12.3",
     "watch": "^1.0.2"
   },
   "devDependencies": {

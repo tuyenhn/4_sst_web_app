@@ -128,6 +128,19 @@ $(document).ready(() => {
   faqCollapse();
 });
 
+// service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./service-worker.js")
+    .then((registration) => {
+      console.log("Service Worker Registered!");
+      return registration;
+    })
+    .catch((err) => {
+      console.error("Unable to register service worker.", err);
+    });
+}
+
 $(window).ready(() => {
   $("#slider-2").hide();
 
