@@ -1,57 +1,134 @@
-{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
-%} {{ super() }} {% endblock %} {% block content %}
-<div class="container my-8 mx-auto px-4 leading-normal">
-  <h2 class="font-header-bold mb-6">{{ session["selectedLang"]["404"] }}</h2>
-  <p class="font-body-medium">{{ session["selectedLang"]["offline_text"] }}</p>
-  <ul class="list-reset text-black mb-8 p-8 text-grey-darker rounded shadow-lg">
-    {{ session["selectedLang"]["list"] }}
-    <li class="flex items-center mb-3 font-body-roman">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="flex-none w-8 mr-2"
-        viewBox="0 0 24 24"
-        fill="green"
-      >
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-        /></svg
-      >{{ session["selectedLang"]["solution_1"] }}
-    </li>
-    <li class="flex items-center mb-3 font-body-roman">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="flex-none w-8 mr-2"
-        viewBox="0 0 24 24"
-        fill="green"
-      >
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-        /></svg
-      >{{ session["selectedLang"]["solution_2"] }}
-    </li>
-    <li class="flex items-center mb-3 font-body-roman">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="flex-none w-8 mr-2"
-        viewBox="0 0 24 24"
-        fill="green"
-      >
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-        /></svg
-      >{{ session["selectedLang"]["solution_3"] }}
-    </li>
-  </ul>
-  <!--Return button-->
-  <div
-    class="flex flex-shrink-0 items-center justify-center px-0 w-full lg:px-40"
-  >
-    <button
-      class="px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 hover:shadow-md font-body-medium text-white"
-    >
-      {{ session["selectedLang"]["retry"] }}
-    </button>
-  </div>
-</div>
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  class="no-js"
+>
 
-{% endblock %}
+  <head>
+
+    <title>4 SST</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta
+      name="4 SST"
+      content="Control the LEDs on the number 4"
+    >
+    <meta
+      name="theme-color"
+      content="#000054"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='prod/css/template.css') }}"
+      {# href="../static/prod/css/template.css" #}
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='site.webmanifest') }}"
+    />
+  </head>
+
+  <body
+    class="flex flex-col w-screen py-0 bg-white bg-opacity-80 lg:flex-row lg:py-5 lg:h-screen lg:bg-bg-primary dark:bg-gray-800 dark:text-white"
+  >
+    <div
+      class="sticky top-0 flex-none w-full h-16 py-3 shadow-lg bg-bg-primary dark:bg-gray-900 lg:static lg:pt-5 lg:w-32 lg:h-full lg:bg-transparent lg:shadow-none"
+    >
+      <div
+        class="flex flex-row h-full justify-evenly lg:flex-col lg:justify-start lg:space-y-2"
+      >
+        <div
+          class="flex items-center justify-center text-white select-none font-header-medium md:text-xl lg:text-4xl"
+        >
+          4 SST
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col flex-wrap flex-grow p-3 bg-white shadow-inner lg:flex-row lg:p-5 lg:h-full dark:bg-gray-800 dark:text-white"
+    >
+
+      <div class="container px-4 mx-auto my-8 leading-normal">
+        <h2 class="mb-6 font-header-bold">404 - Page not found</h2>
+        <p class="font-body-medium">The page you are looking for might have been
+          removed had its name changed or is temporarily unavailable.</p>
+        <ul
+          class="p-8 mb-8 text-black rounded shadow-lg list-reset text-grey-darker"
+        >
+          Try the following:
+          <li class="flex items-center mb-3 font-body-roman">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="flex-none w-8 mr-2"
+              viewBox="0 0 24 24"
+              fill="green"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              /></svg>Checking if you are in range of the SST network
+          </li>
+          <li class="flex items-center mb-3 font-body-roman">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="flex-none w-8 mr-2"
+              viewBox="0 0 24 24"
+              fill="green"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              /></svg>Ensuring you are connecting to 4 SST network
+          </li>
+          <li class="flex items-center mb-3 font-body-roman">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="flex-none w-8 mr-2"
+              viewBox="0 0 24 24"
+              fill="green"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              /></svg>If none of above works , please contact us at:
+          </li>
+        </ul>
+        <!--Return button-->
+        <div
+          class="flex items-center justify-center flex-shrink-0 w-full px-0 lg:px-40"
+        >
+          <form action="/">
+            <button
+              class="px-4 py-2 text-white bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-md font-body-medium"
+              type="submit"
+            >
+              Retry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

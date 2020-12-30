@@ -1,97 +1,142 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js {{ session["theme"] }}">
+<html
+  lang="en"
+  dir="ltr"
+  class="no-js {{ session["theme"] }}"
+>
+
   <head>
     {% block head %}
     <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta
+      name="4 SST"
+      content="Control the LEDs on the number 4"
+    >
+    <meta
+      name="theme-color"
+      content="#000054"
+    />
+
 
     <link
       rel="stylesheet"
-      href="../static/node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+      href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/all.min.css') }}"
     />
-    <link rel="stylesheet" href="../static/compiled-css/template.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='prod/css/template.css') }}"
+    />
 
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../static/images/favicon/apple-touch-icon.png"
+      href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png') }}"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../static/images/favicon/favicon-32x32.png"
+      href="{{ url_for('static', filename='images/favicon/favicon-32x32.png') }}"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../static/images/favicon/favicon-16x16.png"
+      href="{{ url_for('static', filename='images/favicon/favicon-16x16.png') }}"
     />
-    <link rel="manifest" href="../static/images/favicon/site.webmanifest" />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='site.webmanifest') }}"
+    />
 
     <!--Javascript-->
-    <script src="../static/node_modules/jquery/dist/jquery.min.js"></script>
-    <script async defer src="../static/js/index.js"></script>
+    <script
+      src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}"
+    ></script>
+    <script
+      async
+      defer
+      src="{{ url_for('static', filename='prod/js/index.js') }}"
+    ></script>
     {% endblock %}
   </head>
 
   <body
-    class="flex flex-col py-0 w-screen bg-white bg-opacity-80 lg:flex-row lg:py-5 lg:h-screen lg:bg-bg-primary dark:bg-gray-800 dark:text-white"
+    class="flex flex-col w-screen py-0 bg-white bg-opacity-80 lg:flex-row lg:py-5 lg:h-screen lg:bg-bg-primary dark:bg-gray-800 dark:text-white"
   >
     <div
-      class="sticky top-0 flex-none py-3 w-full h-16 bg-bg-primary dark:bg-gray-900 shadow-lg lg:static lg:pt-5 lg:w-32 lg:h-full lg:bg-transparent lg:shadow-none"
+      class="sticky top-0 flex-none w-full h-16 py-3 shadow-lg bg-bg-primary dark:bg-gray-900 lg:static lg:pt-5 lg:w-32 lg:h-full lg:bg-transparent lg:shadow-none"
     >
       <div
-        class="flex flex-row justify-evenly h-full lg:flex-col lg:justify-start lg:space-y-2"
+        class="flex flex-row h-full justify-evenly lg:flex-col lg:justify-start lg:space-y-2"
       >
         <div
-          class="flex items-center justify-center text-white font-header-medium select-none md:text-xl lg:text-4xl"
+          class="flex items-center justify-center text-white select-none font-header-medium md:text-xl lg:text-4xl"
         >
           4 SST
         </div>
         <div class="lg:px-2">
           <a
             href="{{ url_for('home') }}"
-            class="flex items-center justify-center px-3 h-full hover:text-gray-100 hover:bg-blue-500 bg-blue-900 rounded-lg cursor-pointer lg:px-0 lg:h-11"
+            class="flex items-center justify-center h-full px-3 bg-blue-900 rounded-lg cursor-pointer hover:text-gray-100 hover:bg-blue-500 lg:px-0 lg:h-11"
           >
-            <i class="fas fa-home fa-lg" style="color: white"></i>
+            <i
+              class="fas fa-home fa-lg"
+              style="color: white"
+            ></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-medium">{{ session["selectedLang"]["home"] }}</p>
+              <p class="ml-2 text-white navTxt font-header-medium">
+                {{ session["selectedLang"]["home"] }}</p>
             </div>
           </a>
         </div>
         <div class="lg:px-2">
           <a
             href="{{ url_for('paint') }}"
-            class="flex items-center justify-center px-3 h-full hover:text-gray-100 hover:bg-blue-500 bg-blue-900 rounded-lg cursor-pointer lg:px-0 lg:h-11"
+            class="flex items-center justify-center h-full px-3 bg-blue-900 rounded-lg cursor-pointer hover:text-gray-100 hover:bg-blue-500 lg:px-0 lg:h-11"
           >
-            <i class="fas fa-paint-brush fa-lg" style="color: white"></i>
+            <i
+              class="fas fa-paint-brush fa-lg"
+              style="color: white"
+            ></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-medium">{{ session["selectedLang"]["paint"] }}</p>
+              <p class="ml-2 text-white navTxt font-header-medium">
+                {{ session["selectedLang"]["paint"] }}</p>
             </div>
           </a>
         </div>
         <div class="lg:px-2">
           <a
             href="{{ url_for('settings') }}"
-            class="flex items-center justify-center px-3 h-full hover:text-gray-100 hover:bg-blue-500 bg-blue-900 rounded-lg cursor-pointer lg:px-0 lg:h-11"
+            class="flex items-center justify-center h-full px-3 bg-blue-900 rounded-lg cursor-pointer hover:text-gray-100 hover:bg-blue-500 lg:px-0 lg:h-11"
           >
-            <i class="fas fa-cogs fa-lg" style="color: white"></i>
+            <i
+              class="fas fa-cogs fa-lg"
+              style="color: white"
+            ></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-medium">{{ session["selectedLang"]["settings"] }}</p>
+              <p class="ml-2 text-white navTxt font-header-medium">
+                {{ session["selectedLang"]["settings"] }}</p>
             </div>
           </a>
         </div>
         <div class="lg:px-2">
           <a
             href="{{ url_for('help') }}"
-            class="flex items-center justify-center px-3 h-full hover:text-gray-100 hover:bg-blue-500 bg-blue-900 rounded-lg cursor-pointer lg:px-0 lg:h-11"
+            class="flex items-center justify-center h-full px-3 bg-blue-900 rounded-lg cursor-pointer hover:text-gray-100 hover:bg-blue-500 lg:px-0 lg:h-11"
           >
-            <i class="fas fa-question-circle fa-lg" style="color: white"></i>
+            <i
+              class="fas fa-question-circle fa-lg"
+              style="color: white"
+            ></i>
             <div>
-              <p class="navTxt ml-2 text-white font-header-medium">{{ session["selectedLang"]["help"] }}</p>
+              <p class="ml-2 text-white navTxt font-header-medium">
+                {{ session["selectedLang"]["help"] }}</p>
             </div>
           </a>
         </div>
@@ -99,7 +144,7 @@
     </div>
 
     <div
-      class="flex flex-col flex-grow flex-wrap p-3 bg-white shadow-inner lg:flex-row lg:p-5 lg:h-full dark:bg-gray-800 dark:text-white"
+      class="flex flex-col flex-wrap flex-grow p-3 bg-white shadow-inner lg:flex-row lg:p-5 lg:h-full dark:bg-gray-800 dark:text-white"
     >
       {% block content %} {% endblock %}
     </div>
@@ -113,4 +158,5 @@
       $(document.documentElement).toggleClass("no-fouc");
     </script>
   </body>
+
 </html>

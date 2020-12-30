@@ -1,17 +1,27 @@
-{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
-%} {{ super() }} {% endblock %} {% block content %}
+{% extends "template.html" %}
+{% block title %}4 SST{% endblock %}
+{% block head%}
+{{ super() }}
+{% endblock %}
 
+{% block content %}
 <!--Carousel-->
-<div class="sliderAx flex-shrink-0 w-full h-96 lg:h-1/2">
-  <div id="slider-1" class="container mx-auto h-full">
-    <div class="h-full bg-cover bg-center">
+<div class="flex-shrink-0 w-full sliderAx h-96 lg:h-1/2">
+  <div
+    id="slider-1"
+    class="container h-full mx-auto"
+  >
+    <div class="h-full bg-center bg-cover">
       <div class="h-full bg-red-500"></div>
     </div>
     <!-- container -->
   </div>
 
-  <div id="slider-2" class="container mx-auto h-full">
-    <div class="h-full bg-cover bg-center">
+  <div
+    id="slider-2"
+    class="container h-full mx-auto"
+  >
+    <div class="h-full bg-center bg-cover">
       <div class="h-full bg-blue-500"></div>
     </div>
     <!-- container -->
@@ -20,12 +30,11 @@
 
 <!--Description-->
 <div
-  class="flex flex-col content-center justify-center pt-3 px-2 w-full box-border lg:px-5 lg:w-1/2 lg:h-1/2"
+  class="box-border flex flex-col content-center justify-center w-full px-2 pt-3 lg:px-5 lg:w-1/2 lg:h-1/2"
 >
   <div class="">
     <p
-      class="align-center text-justify font-body-roman text-base md:text-sm xl:text-lg"
-    >
+      class="text-base text-justify align-center font-body-roman md:text-sm xl:text-lg">
       {{ session["selectedLang"]["text"] }}
     </p>
   </div>
@@ -33,14 +42,13 @@
 
 <!--Login-->
 <div
-  class="flex flex-wrap content-center pt-3 px-2 w-full h-1/2 lg:pt-0 lg:px-5 lg:w-1/2"
+  class="flex flex-wrap content-center w-full px-2 pt-3 h-1/2 lg:pt-0 lg:px-5 lg:w-1/2"
 >
   <div class="w-full">
     <div
-      class="flex flex-col p-5 border-2 border-gray-300 rounded-lg shadow-lg"
-    >
+      class="flex flex-col p-5 border-2 border-gray-300 rounded-lg shadow-lg">
       <div>
-        <h2 class="text-center font-header-bold text-2xl font-bold">
+        <h2 class="text-2xl font-bold text-center font-header-bold">
           {{ session["selectedLang"]["login"] }}
         </h2>
       </div>
@@ -51,12 +59,12 @@
             <div>
               <label for="username">
                 <span
-                  class="text-grey-darker font-header-medium text-sm font-bold"
+                  class="text-sm font-bold text-grey-darker font-header-medium"
                 >
                   {{ session["selectedLang"]["username"] }}
                 </span>
                 <input
-                  class="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm transition-all focus:ring-indigo-200 focus:ring-opacity-50 focus:ring dark:text-black"
+                  class="block w-full mt-1 transition-all border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 focus:ring dark:text-black"
                   id="username"
                   type="text"
                 />
@@ -64,23 +72,31 @@
             </div>
             <div>
               <label
-                class="text-grey-darker block font-header-medium text-sm font-bold"
+                class="block text-sm font-bold text-grey-darker font-header-medium"
                 for="password"
-                >{{ session["selectedLang"]["password"] }}</label
               >
+                {{ session["selectedLang"]["password"] }}
+              </label>
               <div class="relative w-full">
                 <div class="absolute inset-y-0 right-0 flex items-center px-2">
-                  <input class="hidden" id="toggle" type="checkbox" />
+                  <input
+                    class="hidden"
+                    id="toggle"
+                    type="checkbox"
+                  />
                   <label
-                    class="font-mono px-2 py-1 text-gray-600 text-sm bg-gray-300 hover:bg-gray-400 rounded cursor-pointer"
+                    class="px-2 py-1 font-mono text-sm text-gray-600 bg-gray-300 rounded cursor-pointer hover:bg-gray-400"
                     for="toggle"
                     id="eyeBtn"
                   >
-                    <i class="fas fa-eye-slash" id="eye"></i>
+                    <i
+                      class="fas fa-eye-slash"
+                      id="eye"
+                    ></i>
                   </label>
                 </div>
                 <input
-                  class="w-full leading-tight border-2 border-gray-300 focus:border-indigo-300 rounded-md appearance-none transition-all focus:ring-indigo-200 focus:ring-opacity-50 focus:ring dark:text-black"
+                  class="w-full leading-tight transition-all border-2 border-gray-300 rounded-md appearance-none focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 focus:ring dark:text-black"
                   id="password"
                   type="password"
                 />
@@ -92,22 +108,26 @@
                 <label>
                   <input
                     type="checkbox"
-                    class="text-indigo-600 border-gray-300 focus:border-indigo-300 rounded shadow-sm transition-all focus:ring-indigo-200 focus:ring-opacity-50 focus:ring"
+                    class="text-indigo-600 transition-all border-gray-300 rounded shadow-sm focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 focus:ring"
                   />
-                  <span class="font-body-roman"
-                    >{{ session["selectedLang"]["remember_me"] }}</span
-                  >
+                  <span
+                    class="font-body-roman">{{ session["selectedLang"]["remember_me"] }}</span>
                 </label>
               </div>
               <div class="lg:w-1/2">
-                <p id="capsWarning" class="font-body-roman">{{ session["selectedLang"]["capslock"] }}</p>
+                <p
+                  id="capsWarning"
+                  class="font-body-roman"
+                >{{ session["selectedLang"]["capslock"] }}</p>
               </div>
             </div>
 
             <div>
-              <input type="submit" value="{{
-              session["selectedLang"]["submit"]}}" class="w-full h-8 text-white
-              bg-blue-600 hover:bg-blue-700 rounded-lg cursor-pointer" />
+              <input
+                type="submit"
+                value="{{session["selectedLang"]["submit"]}}"
+                class="w-full h-8 text-white bg-blue-600 rounded-lg cursor-pointer hover:bg-blue-700"
+              />
             </div>
           </div>
         </form>

@@ -1,8 +1,15 @@
-{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
-%} {{ super() }} {% endblock %} {% block content %}
+{% extends "template.html" %}
+{% block title %}4 SST{% endblock %}
+{% block head%}
+{{ super() }}
+{% endblock %}
 
+{% block content %}
 <div class="flex-shrink-0 w-full lg:w-1/2">
-  <svg viewBox="0 0 106 130" id="svg4">
+  <svg
+    viewBox="0 0 106 130"
+    id="svg4"
+  >
     <polygon
       points="48,0 88,0 88,73.5 106,73.5 106,101.5 88,101.5 88,130 52,130 52,101.5 0,101.5 0,73.5"
       stroke-linecap="round"
@@ -17,24 +24,24 @@
 <div class="mobileSep mt-10 w-full h-0.5 bg-gray-100"></div>
 
 <div
-  class="flex flex-col flex-wrap content-center pt-10 w-full space-y-4 lg:flex-row lg:pt-0 lg:w-1/2"
+  class="flex flex-col flex-wrap content-center w-full pt-10 space-y-4 lg:flex-row lg:pt-0 lg:w-1/2"
 >
   <!--Animation -->
   <div class="flex flex-col w-full space-x-0 lg:flex-row lg:space-x-5">
     <div
-      class="flex flex-shrink-0 items-center justify-center w-full lg:justify-end lg:w-1/2"
+      class="flex items-center justify-center flex-shrink-0 w-full lg:justify-end lg:w-1/2"
     >
       <p class="font-header-medium">
         {{ session["selectedLang"]["animation"] }}
       </p>
     </div>
     <div
-      class="flex flex-shrink-0 items-center justify-center w-full lg:justify-start lg:w-1/2"
+      class="flex items-center justify-center flex-shrink-0 w-full lg:justify-start lg:w-1/2"
     >
       <div class="relative inline-flex">
         <label>
           <select
-            class="pl-5 pr-10 h-10 text-gray-600 bg-white border border-gray-300 hover:border-gray-400 rounded-full focus:outline-none appearance-none"
+            class="h-10 pl-5 pr-10 text-gray-600 bg-white border border-gray-300 rounded-full appearance-none hover:border-gray-400 focus:outline-none"
           >
             <option>RMIT</option>
             <option>Spiral</option>
@@ -53,33 +60,37 @@
   <!--Brightness Range Slider-->
   <div class="flex flex-col w-full space-x-0 lg:flex-row lg:space-x-5">
     <div
-      class="flex flex-shrink-0 items-center justify-center w-full lg:justify-end lg:w-1/2"
+      class="flex items-center justify-center flex-shrink-0 w-full lg:justify-end lg:w-1/2"
     >
-      <label class="font-header-medium" for="brRange"
-        >{{ session["selectedLang"]["brightness"] }}</label
-      >
+      <label
+        class="font-header-medium"
+        for="brRange"
+      >{{ session["selectedLang"]["brightness"] }}</label>
     </div>
     <div
-      class="flex flex-shrink-0 items-center justify-center w-full lg:justify-start lg:w-1/2"
+      class="flex items-center justify-center flex-shrink-0 w-full lg:justify-start lg:w-1/2"
     >
       <input
         type="range"
         min="1"
         max="100"
         value="50"
-        class="w-auto h-auto bg-blue-200 rounded-lg outline-none hover:opacity-100 opacity-70 appearance-none transition-all"
+        class="w-auto h-auto transition-all bg-blue-200 rounded-lg outline-none appearance-none hover:opacity-100 opacity-70"
         id="brRange"
       />
-      <span id="brLabel" class="ml-3"></span>
+      <span
+        id="brLabel"
+        class="ml-3"
+      ></span>
     </div>
   </div>
 
   <!--Save button-->
   <div
-    class="flex flex-shrink-0 items-center justify-center px-0 w-full lg:px-40"
+    class="flex items-center justify-center flex-shrink-0 w-full px-0 lg:px-40"
   >
     <button
-      class="px-2 py-1 w-full text-white bg-purple-600 hover:bg-purple-700 border rounded shadow-lg"
+      class="w-full px-2 py-1 text-white bg-purple-600 border rounded shadow-lg hover:bg-purple-700"
     >
       {{ session["selectedLang"]["save"] }}
     </button>

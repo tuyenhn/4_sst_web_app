@@ -1,24 +1,28 @@
-{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
-%} {{ super() }} {% endblock %} {% block content %}
+{% extends "template.html" %}
+{% block title %}4 SST{% endblock %}
+{% block head%}
+{{ super() }}
+{% endblock %}
 
+{% block content %}
 <form
   action="/applySettings"
   method="post"
-  class="block flex flex-col flex-wrap pt-20 w-full space-y-6 lg:space-y-3"
+  class="flex flex-col flex-wrap block w-full pt-20 space-y-6 lg:space-y-3"
 >
   <!--Dark mode-->
   <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0">
     <div
-      class="flex content-center justify-center pr-0 w-full lg:justify-end lg:pr-2 lg:w-1/2"
+      class="flex content-center justify-center w-full pr-0 lg:justify-end lg:pr-2 lg:w-1/2"
     >
       <div
-        class="text-md text-text-primary static flex items-center justify-start font-header-medium"
+        class="static flex items-center justify-start text-md text-text-primary font-header-medium"
       >
         {{ session["selectedLang"]["darkmode"] }}
       </div>
     </div>
     <div
-      class="flex items-center justify-center pl-0 w-full lg:justify-start lg:pl-3 lg:w-1/2"
+      class="flex items-center justify-center w-full pl-0 lg:justify-start lg:pl-3 lg:w-1/2"
     >
       <!-- Toggle Button -->
       <label
@@ -28,14 +32,20 @@
         <!-- toggle -->
         <div class="relative">
           <!-- input -->
-          <input id="darkModeInp" type="checkbox" class="hidden" name="darkModeInp" {{ session["darkBtnInp"] }}/>
+          <input
+            id="darkModeInp"
+            type="checkbox"
+            class="hidden"
+            name="darkModeInp"
+            {{ session["darkBtnInp"] }}
+          />
           <!-- line -->
           <div
-            class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"
+            class="w-10 h-4 bg-gray-400 rounded-full shadow-inner toggle__line"
           ></div>
           <!-- dot -->
           <div
-            class="toggle__dot absolute inset-y-0 left-0 w-6 h-6 bg-white border rounded-full shadow"
+            class="absolute w-6 h-6 bg-white border rounded-full shadow botttom-0 toggle__dot"
           ></div>
         </div>
       </label>
@@ -48,30 +58,42 @@
   <!-- Language -->
   <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0">
     <div
-      class="flex content-center justify-center pr-0 w-full lg:justify-end lg:pr-2 lg:w-1/2"
+      class="flex content-center justify-center w-full pr-0 lg:justify-end lg:pr-2 lg:w-1/2"
     >
       <div
-        class="text-text-primary text-md static flex items-center justify-start font-header-medium"
+        class="static flex items-center justify-start text-text-primary text-md font-header-medium"
       >
         {{ session["selectedLang"]["language"] }}
       </div>
     </div>
     <div
-      class="flex content-center justify-center pl-0 w-full lg:justify-start lg:pl-2 lg:w-1/2"
+      class="flex content-center justify-center w-full pl-0 lg:justify-start lg:pl-2 lg:w-1/2"
     >
       <div class="relative inline-flex">
         <label for="languageInp"></label>
         <select
-          class="pl-5 pr-10 h-10 text-gray-600 bg-white border border-gray-300 hover:border-gray-400 rounded-full focus:outline-none appearance-none transition-all"
+          class="h-10 pl-5 pr-10 text-gray-600 transition-all bg-white border border-gray-300 rounded-full appearance-none hover:border-gray-400 focus:outline-none"
           name="languageInp"
           id="languageInp"
         >
-          <option value="English" {% if session["lang"] == "English" %} selected {% else %} {% endif %}>
+          <option
+            value="English"
+            {% if session["lang"] == "English" %}
+            selected
+            {% else %}
+            {% endif %}
+          >
             {{ session["selectedLang"]["english"] }}
           </option>
 
-          
-          <option value="Vietnamese" {% if session["lang"] == "Vietnamese" %} selected {% else %} {% endif %}>
+
+          <option
+            value="Vietnamese"
+            {% if session["lang"] == "Vietnamese" %}
+            selected
+            {% else %}
+            {% endif %}
+          >
             {{ session["selectedLang"]["vietnamese"] }}
           </option>
         </select>
@@ -85,7 +107,7 @@
   <div class="flex flex-col space-y-2 lg:flex-row lg:space-y-0">
     <div class="flex content-center justify-center w-full">
       <button
-        class="px-2 py-1 w-1/4 text-white bg-purple-600 hover:bg-purple-700 border rounded shadow-lg"
+        class="w-1/4 px-2 py-1 text-white bg-purple-600 border rounded shadow-lg hover:bg-purple-700"
         type="submit"
       >
         {{ session["selectedLang"]["save"] }}

@@ -1,25 +1,27 @@
-{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block head
-%} {{ super() }} {% endblock %} {% block content %}
+{% extends "template.html" %}
+{% block title %}4 SST{% endblock %}
+{% block head%}
+{{ super() }}
+{% endblock %}
 
-<div class="flex flex-col p-10 w-full lg:flex-row">
+{% block content %}
+<div class="flex flex-col w-full p-10 lg:flex-row">
   <div
-    class="flex-shrink-0 pb-5 w-full font-header-bold text-4xl select-none lg:pb-0 lg:w-48"
+    class="flex-shrink-0 w-full pb-5 text-4xl select-none font-header-bold lg:pb-0 lg:w-48"
   >
     {{ session["selectedLang"]["faq"] }}
   </div>
-  <div class="flex-grow px-0 select-none space-y-4 lg:px-20">
+  <div class="flex-grow px-0 space-y-4 select-none lg:px-20">
     <a
-      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer"
-    >
+      class="flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer show_hide">
       <div
-        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
-      >
+        class="flex-shrink-0 w-11/12 pr-2 text-xl font-header-medium lg:pr-0">
         How to change the animation of the LED ?
       </div>
       <div class="flex-shrink-0 w-1/12">
         <i class="fas fa-chevron-down"> </i>
       </div>
-      <div class="content text-justify font-body-light text-lg">
+      <div class="text-lg text-justify content font-body-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -30,17 +32,15 @@
       </div>
     </a>
     <a
-      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer"
-    >
+      class="flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer show_hide">
       <div
-        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
-      >
+        class="flex-shrink-0 w-11/12 pr-2 text-xl font-header-medium lg:pr-0">
         How to use it with other integrations ?
       </div>
       <div class="flex-shrink-0 w-1/12">
         <i class="fas fa-chevron-down"> </i>
       </div>
-      <div class="content text-justify font-body-light text-lg">
+      <div class="text-lg text-justify content font-body-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -51,17 +51,15 @@
       </div>
     </a>
     <a
-      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer"
-    >
+      class="flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer show_hide">
       <div
-        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
-      >
+        class="flex-shrink-0 w-11/12 pr-2 text-xl font-header-medium lg:pr-0">
         How to download the app for mobile ?
       </div>
       <div class="flex-shrink-0 w-1/12">
         <i class="fas fa-chevron-down"> </i>
       </div>
-      <div class="content text-justify font-body-light text-lg">
+      <div class="text-lg text-justify content font-body-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -72,17 +70,15 @@
       </div>
     </a>
     <a
-      class="show_hide flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer"
-    >
+      class="flex flex-wrap justify-between border-b-2 border-gray-200 cursor-pointer show_hide">
       <div
-        class="flex-shrink-0 pr-2 w-11/12 font-header-medium text-xl lg:pr-0"
-      >
+        class="flex-shrink-0 w-11/12 pr-2 text-xl font-header-medium lg:pr-0">
         How to use extensions ?
       </div>
       <div class="flex-shrink-0 w-1/12">
         <i class="fas fa-chevron-down"> </i>
       </div>
-      <div class="content text-justify font-body-light text-lg">
+      <div class="text-lg text-justify content font-body-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea

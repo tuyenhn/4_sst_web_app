@@ -1,7 +1,8 @@
 from json import load
 from os import path, urandom
+from flask import Flask, render_template, session, request, redirect, Response
+from flask_compress import Compress
 
-from flask import Flask, render_template, session, request, redirect
 
 dirname = path.dirname(__file__)
 certpath = path.join(dirname, "cert/")
@@ -10,6 +11,8 @@ languageJson = load(langFile)
 
 app = Flask(__name__)
 app.secret_key = urandom(24)
+app.config["SERVER_NAME"] = "4sst.rmit:443"
+Compress(app)
 
 
 @app.before_first_request
@@ -18,6 +21,17 @@ def sessionSetup():
     session["darkBtnInp"] = ""
     session["lang"] = "English"
     setLang(session["lang"])
+
+
+@app.after_request
+def http_header(resp):
+    resp.cache_control.max_age = 31536000
+    return resp
+
+
+@app.route("/service-worker.js")
+def serviceWorker():
+    return app.send_static_file("prod/js/service-worker.js")
 
 
 @app.route("/")
@@ -38,6 +52,11 @@ def settings():
 @app.route("/help")
 def help():
     return render_template("help.html")
+
+
+@app.route("/offline")
+def offline():
+    return render_template("offline.html")
 
 
 def setLang(lang):
@@ -63,5 +82,4 @@ def applySettings():
     return redirect("/settings")
 
 
-app.config["SERVER_NAME"] = "4sst.rmit:443"
 app.run(debug=True, ssl_context=(certpath + "4sst.rmit.pem", certpath + "4sst.rmit-key.pem"))
