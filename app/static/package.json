@@ -4,11 +4,13 @@
   "description": "web app development for RMIT's number 4 ",
   "main": "./js/index.js",
   "scripts": {
-    "build:css": "npx postcss css/template.css -o prod/css/template.css",
+    "build:css": "npx postcss css/template.css -o prod/css/template.css && cp node_modules/@fortawesome/fontawesome-free/css/all.min.css prod/css/fontawesome.min.css",
     "build:index": "npx uglifyjs js/index.js -o prod/js/index.js",
     "build:service-worker": "npx uglifyjs js/service-worker.js -o prod/js/service-worker.js",
-    "build:js": "npm run build:index && npm run build:service-worker",
-    "watch": "watch \"npm run build:css\" ./css"
+    "build:js": "npx mkdirp \"./prod/js\" && cp node_modules/jquery/dist/jquery.min.js prod/js && npm run build:index && npm run build:service-worker",
+    "build:all": "npm run build:css && npm run build:js",
+    "watch:css": "watch \"npm run build:css\" ./css",
+    "watch:js": "watch \"npm run build:js\" ./js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "jquery": "^3.5.1",
+    "mkdirp": "^1.0.4",
     "postcss": "^8.2.1",
     "postcss-cli": "^8.3.0"
   }

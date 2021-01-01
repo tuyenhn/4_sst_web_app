@@ -25,7 +25,7 @@
 
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/all.min.css') }}"
+      href="{{ url_for('static', filename='prod/css/fontawesome.min.css') }}"
     />
     <link
       rel="stylesheet"
@@ -55,9 +55,8 @@
     />
 
     <!--Javascript-->
-    <script
-      src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}"
-    ></script>
+    <script src="{{ url_for('static', filename='prod/js/jquery.min.js') }}">
+    </script>
     <script
       async
       defer
