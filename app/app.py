@@ -23,15 +23,15 @@ csp = {
     "default-src": "'self'",
     "script-src": [
         "'unsafe-inline'",
-        f"https://192.168.1.21:5000/static/prod/js/jquery.min.js",
-        f"https://192.168.1.21:5000/static/prod/js/index.js",
-        f"https://192.168.1.21:5000/service-worker.js",
+        f"https://{domain}/static/prod/js/jquery.min.js",
+        f"https://{domain}/static/prod/js/index.js",
+        f"https://{domain}/service-worker.js",
     ],
     "style-src": ["'unsafe-inline'"],
     "style-src-elem": [
         "'unsafe-inline'",
-        f"https://192.168.1.21:5000/static/prod/css/template.css",
-        f"https://192.168.1.21:5000/static/prod/css/fontawesome.min.css",
+        f"https://{domain}/static/prod/css/template.css",
+        f"https://{domain}/static/prod/css/fontawesome.min.css",
     ],
     "img-src": ["'self'", "data:"],
 }
