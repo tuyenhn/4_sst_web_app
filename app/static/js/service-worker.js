@@ -1,6 +1,5 @@
 const CACHE_NAME = "static-cache";
 const FILES_TO_CACHE = [
-  "/",
   "offline",
   "/static/prod/css/template.css",
   "/static/prod/js/service-worker.js",
