@@ -12,27 +12,30 @@ languageJson = load(langFile)
 
 app = Flask(__name__)
 app.secret_key = urandom(24)
-server_name = "4sst.rmit:443"
+domain = "4sst.rmit"
+port = "443"
+server_name = f"{domain}:{port}"
 app.config["SERVER_NAME"] = server_name
+
 Compress(app)
-Talisman(
-    app,
-    content_security_policy={
-        "default-src": "'self'",
-        "script-src": [
-            "'unsafe-inline'",
-            f"https://{server_name}/static/prod/js/jquery.min.js",
-            f"https://{server_name}/static/prod/js/index.js",
-            f"https://{server_name}/service-worker.js",
-        ],
-        "style-src": ["'unsafe-inline'"],
-        "style-src-elem": [
-            "'unsafe-inline'",
-            f"https://{server_name}/static/prod/css/template.css",
-            f"https://{server_name}/static/prod/css/fontawesome.min.css",
-        ],
-    },
-)
+
+csp = {
+    "default-src": "'self'",
+    "script-src": [
+        "'unsafe-inline'",
+        f"https://192.168.1.21:5000/static/prod/js/jquery.min.js",
+        f"https://192.168.1.21:5000/static/prod/js/index.js",
+        f"https://192.168.1.21:5000/service-worker.js",
+    ],
+    "style-src": ["'unsafe-inline'"],
+    "style-src-elem": [
+        "'unsafe-inline'",
+        f"https://192.168.1.21:5000/static/prod/css/template.css",
+        f"https://192.168.1.21:5000/static/prod/css/fontawesome.min.css",
+    ],
+    "img-src": ["'self'", "data:"],
+}
+Talisman(app, content_security_policy=csp)
 
 
 def sessionSetup():
@@ -67,11 +70,6 @@ def serviceWorker():
 
 
 @app.route("/")
-def index():
-    return redirect("/home")
-
-
-@app.route("/home")
 def home():
     return render_template("home.html")
 
@@ -116,4 +114,4 @@ def applySettings():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, ssl_context=(certpath + "4sst.rmit.pem", certpath + "4sst.rmit-key.pem"))
+    app.run(debug=True, ssl_context=(certpath + f"{domain}.pem", certpath + f"{domain}-key.pem"))
