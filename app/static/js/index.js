@@ -108,10 +108,29 @@ let faqCollapse = () => {
   });
 };
 
-// prevent FUOC
-$(document).ready(() => {
-  $(".no-fouc").removeClass("no-fouc");
-  faqCollapse();
+// DRAWING!
+let pickedColor = "#bfdbfe";
+const pickerContainer = $("#pickerContainer")[0];
+const colorPicker = new Picker({
+  parent: pickerContainer,
+  alpha: false,
+  onDone: function (color) {
+    pickerContainer.style.background = color.hex.slice(0, 7);
+    pickedColor = color.hex.slice(0, 7);
+  },
+  color: "#bfdbfe",
+});
+
+colorPicker.openHandler();
+
+let mouseDown = false;
+$(".ledPxl").on({
+  mouseover: function () {
+    if (mouseDown) {
+      $(this).css("stroke", pickedColor);
+      $(this).find("input").val(pickedColor);
+    }
+  },
 });
 
 // service worker
@@ -126,6 +145,15 @@ if ("serviceWorker" in navigator) {
       console.error("Unable to register service worker.", err);
     });
 }
+
+
+$(document).mousedown(() => {
+  mouseDown = true;
+});
+
+$(document).mouseup(() => {
+  mouseDown = false;
+});
 
 $(window).ready(() => {
   $("#slider-2").hide();
