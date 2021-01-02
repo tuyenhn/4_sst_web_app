@@ -146,6 +146,11 @@ if ("serviceWorker" in navigator) {
     });
 }
 
+// prevent FUOC
+$(document).ready(() => {
+  $(".no-fouc").removeClass("no-fouc");
+  faqCollapse();
+});
 
 $(document).mousedown(() => {
   mouseDown = true;

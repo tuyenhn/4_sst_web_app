@@ -53,9 +53,15 @@
       rel="manifest"
       href="{{ url_for('static', filename='site.webmanifest') }}"
     />
+    <style type="text/css">
+      .no-fouc {
+        display: none;
+      }
+    </style>
 
     <!--Javascript-->
-    <script src="{{ url_for('static', filename='prod/js/jquery.min.js') }}">
+    <script type="text/javascript">
+      document.documentElement.classList.add("no-fouc");
     </script>
     <script
       defer
@@ -98,7 +104,7 @@
               style="color: white"
             ></i>
             <div>
-              <p class="ml-2 text-white navTxt font-header-medium">
+              <p class="ml-2 text-white select-none navTxt font-header-medium">
                 {{ session["selectedLang"]["home"] }}</p>
             </div>
           </a>
@@ -113,7 +119,7 @@
               style="color: white"
             ></i>
             <div>
-              <p class="ml-2 text-white navTxt font-header-medium">
+              <p class="ml-2 text-white select-none navTxt font-header-medium">
                 {{ session["selectedLang"]["paint"] }}</p>
             </div>
           </a>
@@ -128,7 +134,7 @@
               style="color: white"
             ></i>
             <div>
-              <p class="ml-2 text-white navTxt font-header-medium">
+              <p class="ml-2 text-white select-none navTxt font-header-medium">
                 {{ session["selectedLang"]["settings"] }}</p>
             </div>
           </a>
@@ -143,7 +149,7 @@
               style="color: white"
             ></i>
             <div>
-              <p class="ml-2 text-white navTxt font-header-medium">
+              <p class="ml-2 text-white select-none navTxt font-header-medium">
                 {{ session["selectedLang"]["help"] }}</p>
             </div>
           </a>
@@ -156,15 +162,6 @@
     >
       {% block content %} {% endblock %}
     </div>
-
-    <style type="text/css">
-      .no-fouc {
-        display: none;
-      }
-    </style>
-    <script type="text/javascript">
-      $(document.documentElement).toggleClass("no-fouc");
-    </script>
   </body>
 
 </html>
