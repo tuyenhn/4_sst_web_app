@@ -145,16 +145,16 @@ def applyPaint():
     return request.form
 
 
+@app.route("/applySettings", methods=["get"])
 def applySettings():
-    try:
-        _ = request.form["darkModeInp"]
+    if request.args.get("darkModeInp") == "on":
         session["theme"] = "dark"
         session["darkBtnInp"] = "checked"
-    except KeyError:
+    else:
         session["theme"] = ""
         session["darkBtnInp"] = ""
 
-    userLang = request.form["languageInp"]
+    userLang = request.args.get("languageInp")
 
     if userLang != session["lang"]:
         session["lang"] = userLang
