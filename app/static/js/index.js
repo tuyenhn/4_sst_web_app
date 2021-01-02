@@ -63,36 +63,22 @@ slider.on("input", () => {
 });
 
 // Navigation bar for mobile
-let sep = $(".mobileSep");
-sep.each((i, obj) => {
-  $(obj).addClass("hidden");
-});
-
+let mobileSep = $(".mobileSep");
+mobileSep.addClass("hidden");
+let navTxt = $(".navTxt");
 let responsiveAdj = () => {
   if (matchMedia("(min-width: 1024px)").matches) {
     // large breakpoint
-    sep.each((i, obj) => {
-      if (!$(obj).hasClass("hidden")) $(obj).addClass("hidden");
-    });
-    $(".navTxt").each((i, obj) => {
-      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
-    });
+    if (!mobileSep.hasClass("hidden")) mobileSep.addClass("hidden");
+    if (navTxt.hasClass("hidden")) navTxt.removeClass("hidden");
   } else if (matchMedia("(min-width: 1024px)").matches) {
     // medium breakpoint
-    sep.each((i, obj) => {
-      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
-    });
-    $(".navTxt").each((i, obj) => {
-      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
-    });
+    if (mobileSep.hasClass("hidden")) mobileSep.removeClass("hidden");
+    if (navTxt.hasClass("hidden")) navTxt.removeClass("hidden");
   } else {
     // smaller breakpoint
-    sep.each((i, obj) => {
-      if ($(obj).hasClass("hidden")) $(obj).removeClass("hidden");
-    });
-    $(".navTxt").each((i, obj) => {
-      if (!$(obj).hasClass("hidden")) $(obj).addClass("hidden");
-    });
+    if (mobileSep.hasClass("hidden")) mobileSep.removeClass("hidden");
+    if (!navTxt.hasClass("hidden")) navTxt.addClass("hidden");
   }
 };
 
