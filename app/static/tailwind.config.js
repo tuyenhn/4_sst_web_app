@@ -4,7 +4,7 @@ module.exports = {
     enabled: true,
     content: ["../templates/*.html", "./js/*.js"],
     options: {
-      safelist: ["dark"],
+      safelist: ["dark", "error", "info"],
     },
   },
   theme: {

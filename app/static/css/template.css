@@ -61,4 +61,12 @@
     transform: translateX(100%);
     background-color: #48bb78;
   }
+
+  span.info {
+    @apply text-green-500;
+  }
+
+  span.error {
+    @apply text-red-500;
+  }
 }

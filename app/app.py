@@ -1,6 +1,6 @@
-from json import load
+from json import load, dumps
 from os import path, urandom
-from flask import Flask, render_template, session, request, redirect, Response
+from flask import Flask, render_template, session, request, redirect, Response, flash
 from flask_compress import Compress
 from flask_talisman import Talisman
 
@@ -12,6 +12,8 @@ languageJson = load(langFile)
 
 app = Flask(__name__)
 app.secret_key = urandom(24)
+app.permanent_session_lifetime = 86400
+
 domain = "4sst.rmit"
 port = "443"
 server_name = f"{domain}:{port}"
@@ -19,24 +21,27 @@ app.config["SERVER_NAME"] = server_name
 
 Compress(app)
 
-csp = {
-    "default-src": "'self'",
-    "script-src": [
-        "'unsafe-inline'",
-        f"https://{domain}/static/prod/js/jquery.min.js",
-        f"https://{domain}/static/prod/js/index.js",
-        f"https://{domain}/static/prod/js/vanilla-picker.js",
-        f"https://{domain}/service-worker.js",
-    ],
-    "style-src": ["'unsafe-inline'"],
-    "style-src-elem": [
-        "'unsafe-inline'",
-        f"https://{domain}/static/prod/css/template.css",
-        f"https://{domain}/static/prod/css/fontawesome.min.css",
-    ],
-    "img-src": ["'self'", "data:"],
-}
-Talisman(app, content_security_policy=csp)
+Talisman(
+    app,
+    content_security_policy={
+        "default-src": "'self'",
+        "script-src": [
+            "'unsafe-inline'",
+            f"https://{domain}/static/prod/js/jquery.min.js",
+            f"https://{domain}/static/prod/js/index.js",
+            f"https://{domain}/static/prod/js/vanilla-picker.js",
+            f"https://{domain}/service-worker.js",
+        ],
+        "style-src": ["'unsafe-inline'"],
+        "style-src-elem": [
+            "'unsafe-inline'",
+            f"https://{domain}/static/prod/css/template.css",
+            f"https://{domain}/static/prod/css/fontawesome.min.css",
+        ],
+        "img-src": ["'self'", "data:"],
+    },
+)
+
 
 matrixArr = [
     [68, 58, 0, 0, 26],
@@ -80,10 +85,12 @@ matrixArr = [
 
 
 def sessionSetup():
+    session.clear()
     session["theme"] = ""
     session["darkBtnInp"] = ""
     session["lang"] = "English"
     setLang(session["lang"])
+    session.permanent = True
 
 
 def setLang(lang):
@@ -142,7 +149,14 @@ def offline():
 @app.route("/applyPaint", methods=["post"])
 def applyPaint():
     # TESTING
-    return request.form
+    try:
+        with open("painted", "w") as f:
+            f.write(dumps(request.form))
+        flash("PAINTING SAVED", "info")
+    except Exception as e:
+        flash(f"AN ERROR OCURRED. SAVING FAILED", "error")
+
+    return redirect("paint")
 
 
 @app.route("/applySettings", methods=["get"])
