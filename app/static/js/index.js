@@ -119,9 +119,10 @@ const colorPicker = new Picker({
     pickedColor = color.hex.slice(0, 7);
   },
   color: "#bfdbfe",
+  popup: false,
 });
 
-colorPicker.openHandler();
+colorPicker.movePopup($("#newPickerContainer")[0], true);
 
 let mouseDown = false;
 $(".ledPxl").on({
@@ -131,6 +132,11 @@ $(".ledPxl").on({
       $(this).find("input").val(pickedColor);
     }
   },
+});
+
+// Clear button
+$("#clearBtn").click(() => {
+  $(".ledPxl").css("stroke", "#000");
 });
 
 // service worker

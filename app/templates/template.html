@@ -70,9 +70,13 @@
     </script>
     <script
       defer
-      src="{{ url_for('static', filename='prod/js/vanilla-picker.js') }}"
+      src="{{ url_for('static', filename='prod/js/vanilla-picker.min.js') }}"
     >
     </script>
+    <script
+      defer
+      src="{{ url_for('static', filename='prod/js/service-worker.js') }}"
+    ></script>
     <script
       defer
       src="{{ url_for('static', filename='prod/js/index.js') }}"

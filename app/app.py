@@ -3,7 +3,7 @@ from os import path, urandom
 from flask import Flask, render_template, session, request, redirect, Response, flash
 from flask_compress import Compress
 from flask_talisman import Talisman
-
+from datetime import datetime as dt
 
 dirname = path.dirname(__file__)
 certpath = path.join(dirname, "cert/")
@@ -12,12 +12,12 @@ languageJson = load(langFile)
 
 app = Flask(__name__)
 app.secret_key = urandom(24)
-app.permanent_session_lifetime = 86400
 
 domain = "4sst.rmit"
 port = "443"
 server_name = f"{domain}:{port}"
 app.config["SERVER_NAME"] = server_name
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
 Compress(app)
 
@@ -29,11 +29,11 @@ Talisman(
             "'unsafe-inline'",
             f"https://{domain}/static/prod/js/jquery.min.js",
             f"https://{domain}/static/prod/js/index.js",
-            f"https://{domain}/static/prod/js/vanilla-picker.js",
+            f"https://{domain}/static/prod/js/vanilla-picker.min.js",
+            f"https://{domain}/static/prod/js/service-worker.js",
             f"https://{domain}/service-worker.js",
         ],
-        "style-src": ["'unsafe-inline'"],
-        "style-src-elem": [
+        "style-src": [
             "'unsafe-inline'",
             f"https://{domain}/static/prod/css/template.css",
             f"https://{domain}/static/prod/css/fontawesome.min.css",
@@ -90,7 +90,6 @@ def sessionSetup():
     session["darkBtnInp"] = ""
     session["lang"] = "English"
     setLang(session["lang"])
-    session.permanent = True
 
 
 def setLang(lang):
@@ -150,8 +149,13 @@ def offline():
 def applyPaint():
     # TESTING
     try:
-        with open("painted", "w") as f:
-            f.write(dumps(request.form))
+        ledDict = {}
+        for k in request.form.keys():
+            if k.startswith("led"):
+                ledDict[k] = request.form[k]
+        fname = "_".join([request.form["fileName"], dt.now().strftime("%Y%m%d%H%M%S")])
+        with open(fname, "w") as f:
+            f.write(dumps(ledDict))
         flash("PAINTING SAVED", "info")
     except Exception as e:
         flash(f"AN ERROR OCURRED. SAVING FAILED", "error")
@@ -178,4 +182,4 @@ def applySettings():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, ssl_context=(certpath + f"{domain}.pem", certpath + f"{domain}-key.pem"))
+    app.run(ssl_context=(certpath + f"{domain}.pem", certpath + f"{domain}-key.pem"))
