@@ -140,7 +140,7 @@ $(".ledPxl").on({
 
 // Clear button
 $("#clearBtn").click(() => {
-  $(".ledPxl").css("stroke", "#000");
+  $(".ledPxl").css("stroke", "#000000");
 });
 
 // service worker

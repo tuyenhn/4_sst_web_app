@@ -4,6 +4,7 @@ from flask import Flask, render_template, session, request, redirect, Response, 
 from flask_compress import Compress
 from flask_talisman import Talisman
 from datetime import datetime as dt
+import translator
 
 dirname = path.dirname(__file__)
 certpath = path.join(dirname, "cert/")
@@ -148,16 +149,16 @@ def offline():
 
 @app.route("/applyPaint", methods=["post"])
 def applyPaint():
-    # TESTING
     try:
         ledDict = {}
-        for k in request.form.keys():
-            if k.startswith("led"):
+        for k, v in request.form.items():
+            if k.startswith("led") and v != "#000000":
                 ledDict[k] = request.form[k]
         fname = "_".join([request.form["fileName"], dt.now().strftime("%Y%m%d%H%M%S")])
         with open(path.join("paintings", fname), "w") as f:
             f.write(dumps(ledDict))
         flash("PAINTING SAVED", "info")
+        translator.translate(path.join("paintings", fname))
     except Exception as e:
         flash(f"AN ERROR OCURRED. SAVING FAILED", "error")
 
