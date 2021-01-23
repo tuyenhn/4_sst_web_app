@@ -7,7 +7,7 @@
     "build:css": "npx postcss css/template.css -o prod/css/template.css && cp node_modules/@fortawesome/fontawesome-free/css/all.min.css prod/css/fontawesome.min.css",
     "build:index": "npx uglifyjs js/index.js -o prod/js/index.js",
     "build:service-worker": "npx uglifyjs js/service-worker.js -o prod/js/service-worker.js",
-    "build:js": "npx mkdirp \"./prod/js\" && cp node_modules/jquery/dist/jquery.min.js prod/js && cp node_modules/vanilla-picker/dist/vanilla-picker.min.js prod/js && npm run build:index && npm run build:service-worker",
+    "build:js": "npx mkdirp \"./prod/js\" && cp node_modules/jquery/dist/jquery.min.js prod/js && cp node_modules/vanilla-picker/dist/vanilla-picker.min.js prod/js && cp js/jquery.mobile.custom.min.js prod/js && npm run build:index && npm run build:service-worker",
     "build:all": "npm run build:css && npm run build:js",
     "watch:css": "watch \"npm run build:css\" ./css",
     "watch:js": "watch \"npm run build:js\" ./js"

@@ -28,6 +28,7 @@ Talisman(
         "script-src": [
             "'unsafe-inline'",
             f"https://{domain}/static/prod/js/jquery.min.js",
+            f"https://{domain}/static/prod/js/jquery.mobile.custom.min.js",
             f"https://{domain}/static/prod/js/index.js",
             f"https://{domain}/static/prod/js/vanilla-picker.min.js",
             f"https://{domain}/static/prod/js/service-worker.js",
@@ -154,7 +155,7 @@ def applyPaint():
             if k.startswith("led"):
                 ledDict[k] = request.form[k]
         fname = "_".join([request.form["fileName"], dt.now().strftime("%Y%m%d%H%M%S")])
-        with open(fname, "w") as f:
+        with open(path.join("paintings", fname), "w") as f:
             f.write(dumps(ledDict))
         flash("PAINTING SAVED", "info")
     except Exception as e:

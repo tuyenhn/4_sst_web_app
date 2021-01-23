@@ -10,7 +10,9 @@
   method="post"
   class="flex flex-col lg:flex-row"
 >
-  <div class="flex-shrink-0 w-full lg:w-1/2">
+  <div
+    class="flex flex-col items-center justify-center flex-shrink-0 w-full lg:flex-row lg:w-1/2"
+  >
     <svg
       viewBox="0 0 106 130"
       id="svg4"
@@ -89,7 +91,8 @@
     </div>
     <div
       id="newPickerContainer"
-      class="flex items-center justify-center flex-col w-full space-x-0 lg:flex-row lg:space-x-5">
+      class="flex flex-col items-center justify-center w-full space-x-0 lg:flex-row lg:space-x-5"
+    >
     </div>
 
     <!--Save name-->
@@ -111,40 +114,46 @@
       </div>
     </div>
 
-    <!--Clear button-->
-    <div
-      class="flex flex-col items-center justify-center flex-shrink-0 w-full px-0 space-y-3 lg:px-40"
-    >
-      <button
-        class="block w-full px-2 py-1 text-white bg-red-600 border rounded shadow-lg select-none hover:bg-red-700"
-        id="clearBtn"
-        type="button"
+    <div class="flex flex-col w-full space-x-0 lg:flex-row lg:space-x-5">
+      <!--Clear button-->
+      <div
+        class="flex items-center justify-center flex-shrink-0 w-full lg:justify-end lg:w-1/2"
       >
-        Clear
-      </button>
+        <button
+          class="block w-full h-16 px-2 py-1 text-white bg-red-600 border rounded shadow-lg select-none lg:w-1/2 hover:bg-red-700"
+          id="clearBtn"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+
+      <!--Save button-->
+      <div
+        class="flex items-center justify-center flex-shrink-0 w-full lg:justify-start lg:w-1/2"
+      >
+        <button
+          class="block w-full h-16 px-2 py-1 text-white bg-green-600 border rounded shadow-lg select-none lg:w-1/2 hover:bg-green-700"
+          type="submit"
+        >
+          {{ session["selectedLang"]["save"] }}
+        </button>
+      </div>
     </div>
 
-    <!--Save button-->
-    <div
-      class="flex flex-col items-center justify-center flex-shrink-0 w-full px-0 space-y-3 lg:px-40"
-    >
-      <button
-        class="block w-full px-2 py-1 text-white bg-purple-600 border rounded shadow-lg select-none hover:bg-purple-700"
-        type="submit"
-      >
-        {{ session["selectedLang"]["save"] }}
-      </button>
-      {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-      {% for category, message in messages %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="flex flex-col w-full lg:flex-row">
       <div class="flex items-center justify-center w-full">
         <span class="{{ category }} select-none font-header-medium">
           {{ message }}
         </span>
       </div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
     </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+  </div>
 </form>
 {% endblock %}

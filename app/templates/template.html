@@ -66,6 +66,10 @@
     <script
       defer
       src="{{ url_for('static', filename='prod/js/jquery.min.js') }}"
+    ></script>
+    <script
+      defer
+      src="{{ url_for('static', filename='prod/js/jquery.mobile.custom.min.js') }}"
     >
     </script>
     <script
@@ -88,7 +92,7 @@
     class="flex flex-col w-screen py-0 bg-white bg-opacity-80 lg:flex-row lg:py-5 lg:h-screen lg:bg-bg-primary dark:bg-gray-800 dark:text-white"
   >
     <div
-      class="sticky top-0 flex-none w-full h-16 py-3 shadow-lg bg-bg-primary dark:bg-gray-900 lg:static lg:pt-5 lg:w-32 lg:h-full lg:bg-transparent lg:shadow-none"
+      class="sticky top-0 z-50 flex-none w-full h-16 py-3 shadow-lg bg-bg-primary dark:bg-gray-900 lg:static lg:pt-5 lg:w-32 lg:h-full lg:bg-transparent lg:shadow-none"
     >
       <div
         class="flex flex-row h-full justify-evenly lg:flex-col lg:justify-start lg:space-y-2"

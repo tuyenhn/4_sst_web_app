@@ -132,6 +132,10 @@ $(".ledPxl").on({
       $(this).find("input").val(pickedColor);
     }
   },
+  tap: function () {
+    $(this).css("stroke", pickedColor);
+    $(this).find("input").val(pickedColor);
+  },
 });
 
 // Clear button
