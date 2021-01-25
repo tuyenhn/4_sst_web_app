@@ -1,0 +1,36 @@
+{% extends "template.html" %} {% block title %}4 SST{% endblock %} {% block
+head%} {{ super() }} {% endblock %} {% block content %}
+
+  <!-- Table -->
+<table class="w-full table-auto border-collapse">
+    <h1 class="text-5xl align-center">
+      {{ session["selectedLang"]["animation"] }}
+      </h1>    
+  <tr>
+    <th>{{ session["selectedLang"]["animation"] }}</th>
+    <th>{{ session["selectedLang"]["name"] }}</th>
+    <th>{{ session["selectedLang"]["action"] }}</th>
+  </tr>
+  <td> 
+    </td>
+    <td><p class="text-left"></p></td>
+    <td>
+        <div class="flex w-full h-full justify-center content-center items-center">
+            <button type="button" class="rounded bg-green-500 hover:bg-green-700 py-2 px-4 text-white mr-8 mt-8">{{ session["selectedLang"]["approve"] }}</button>
+            <button type="button" class="rounded bg-red-500 hover:bg-red-700 py-2 px-4 text-white mt-8">{{ session["selectedLang"]["reject"] }}</button>
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+{% endblock %}
