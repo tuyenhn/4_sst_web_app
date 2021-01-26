@@ -7,24 +7,21 @@ def translate(file_path):
     raw_json = load(f)
     f.close()
 
-    boilerStart()
-    with open("main.cpp", "a") as f:
+    with open("main.cpp", "w") as f:
+        boilerStart(f)
         for k, v in raw_json.items():
             rgb = hexToRGB(v)
             led_n = int(k.lstrip("led"))
             f.write(f"\tleds[{led_n}] = CRGB{rgb};\n")
+        boilerEnd(f)
 
-    boilerEnd()
 
-
-def boilerStart():
-    with open("main.cpp", "w") as f:
-        f.write(
-            """#include "patterns.h"
+def boilerStart(f):
+    f.write(
+        """
+#include "patterns.h"
 
 void setup() {
-    // Serial.begin(57600);
-    // delay(3000);
     FastLED.addLeds<2, WS2812B, 1, GRB>(leds, 1617).setCorrection(TypicalLEDStrip);
 
     FastLED.clear(true);
@@ -41,17 +38,16 @@ int pattern_it = 1;
 
 void loop() {
 """
-        )
+    )
 
 
-def boilerEnd():
-    with open("main.cpp", "a") as f:
-        f.write(
-            """\tFastLED.setBrightness(brightness);
+def boilerEnd(f):
+    f.write(
+        """\tFastLED.setBrightness(brightness);
     FastLED.show();
     delay(1);
 }"""
-        )
+    )
 
 
 def hexToRGB(hex_str):
